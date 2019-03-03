@@ -10,26 +10,26 @@
 
 ## Technologies to be used
 Display: Recycler View
-Map: Google Map API
-Platform: Android Studio
-Database: Google Room / Firebase 
-Structure: MVP structure
-Debug: Setho
-Cloud: AWS/Google Cloud
+<br>Map: Google Map API
+<br>Platform: Android Studio
+<br>Database: Google Room / Firebase 
+<br>Structure: MVP structure
+<br>Debug: Setho
+<br>Cloud: AWS/Google Cloud
 
 ## APIs
 Google map API to display nearby food post and request on map
 ## Task assignments
 He Li: Overall layout, Recycler View, Google Room / Firebase, MVP structure
-ZBY: Google Map API, AWS/Google Cloud
+<br>ZBY: Google Map API, AWS/Google Cloud
 
 ## Definition of Sprint 1 and 2
 Sprint 1: Research on how to use recycler view, room and google map API. Optimize design, specify what tool to use.
-Sprint 2: Overall layout and simple post feature done
+<br>Sprint 2: Overall layout and simple post feature done
 
 ## Project infrastructure
 One main activity, with a top bar and bottom navigator bar and a view pager in the mid.
-Use view pager and container fragment to hold fragments on different pages.
+<br>Use view pager and container fragment to hold fragments on different pages.
 
 ### Initial design of the app
 For initial design, this is what the app will look like.
