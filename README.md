@@ -1,14 +1,12 @@
 # Food Sharing App
-## User stories defined
+### User stories
 
-## Definition of First Sprint
+### Modular architecture
 
-## Definition of the modular architecture of first sprint
+### Technologies to be used
 
-## Technologies to be used in first sprint
+### APIs
 
-## APIs of first sprint
+### Task assignments
 
-## Task assignments
-
-## Project infrastructure
+### Project infrastructure
