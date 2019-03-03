@@ -34,11 +34,13 @@ Use view pager and container fragment to hold fragments on different pages.
 ### Initial design of the app
 For initial design, this is what the app will look like.
 #### Page 1
+The food nearby page will be binded with recycler view to display post and request nearby.<br> People also can make a post/request for food on this page. 
 <p align="center"> 
 <img src="https://github.com/ec500-software-engineering/project-team-22-food-sharing-app/blob/master/pics/app_page1.png">
 </p>
 
 #### Page 2
+Google map API will be used on this page to display the food posts (blue) and requests (green) on the map.
 <p align="center"> 
 <img src="https://github.com/ec500-software-engineering/project-team-22-food-sharing-app/blob/master/pics/app_page2.png">
 </p>
