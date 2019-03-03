@@ -32,11 +32,11 @@ One main activity, with a top bar and bottom navigator bar and a view pager in t
 Use view pager and container fragment to hold fragments on different pages.
 
 For initial design, this is what the app will look like.
+##### Page 1
 <p align="center"> 
-  Page 1
 <img src="https://github.com/ec500-software-engineering/project-team-22-food-sharing-app/blob/master/pics/app_page1.png">
 </p>
+##### Page 2
 <p align="center"> 
-  Page 2
 <img src="https://github.com/ec500-software-engineering/project-team-22-food-sharing-app/blob/master/pics/app_page2.png">
 </p>
