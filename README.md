@@ -58,6 +58,7 @@ Google map API will be used on this page to display the food posts (blue) and re
 <p align="center"> 
 <img src="https://github.com/ec500-software-engineering/project-team-22-food-sharing-app/blob/master/pics/foodPage.gif">
 </p>
+
 ### Display fake geo points on Google map
 #### Embedded Google Map in fragment 
 <p align="center"> 
