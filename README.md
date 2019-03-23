@@ -9,13 +9,19 @@
 </p>
 
 ## Technologies to be used
+### FrontEnd:
 Display: Recycler View
 <br>Map: Google Map API
 <br>Platform: Android Studio
 <br>Database: Google Room / Firebase 
 <br>Structure: MVP structure
 <br>Debug: Setho
-<br>Cloud: AWS/Google Cloud
+
+
+### BackEnd
+Cloud: AWS/Google Cloud
+<br>ElasticSearch to store the post/request and support geo search
+<br>Google Cloud Storage to store all images and data
 
 ## APIs
 Google map API to display nearby food post and request on map
@@ -47,13 +53,18 @@ Google map API will be used on this page to display the food posts (blue) and re
 
 
 ## Progress So Far
+### Display fake data with Recycler View
+#### Click Post details and make new post button will go to a new fragment
 <p align="center"> 
 <img src="https://github.com/ec500-software-engineering/project-team-22-food-sharing-app/blob/master/pics/foodPage.gif">
 </p>
-
+### Display fake geo points on Google map
+#### Embedded Google Map in fragment 
 <p align="center"> 
 <img src="https://github.com/ec500-software-engineering/project-team-22-food-sharing-app/blob/master/pics/mapPage.gif">
 </p>
+
+### Use google account to support login
 <p align="center"> 
 <img src="https://github.com/ec500-software-engineering/project-team-22-food-sharing-app/blob/master/pics/settingPage.gif">
 </p>
