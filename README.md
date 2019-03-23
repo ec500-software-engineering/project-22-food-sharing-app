@@ -44,3 +44,16 @@ Google map API will be used on this page to display the food posts (blue) and re
 <p align="center"> 
 <img src="https://github.com/ec500-software-engineering/project-team-22-food-sharing-app/blob/master/pics/app_page2.png">
 </p>
+
+
+## Progress So Far
+<p align="center"> 
+<img src="https://github.com/ec500-software-engineering/project-team-22-food-sharing-app/blob/master/pics/foodPage.gif">
+</p>
+
+<p align="center"> 
+<img src="https://github.com/ec500-software-engineering/project-team-22-food-sharing-app/blob/master/pics/mapPage.gif">
+</p>
+<p align="center"> 
+<img src="https://github.com/ec500-software-engineering/project-team-22-food-sharing-app/blob/master/pics/settingPage.gif">
+</p>
