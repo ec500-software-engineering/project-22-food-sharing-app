@@ -23,6 +23,6 @@
         completions."
     </string>
     <string name="title_activity_maps">Map</string>
-    <string name="google_maps_key">AIzaSyAUkKq2_H1O50KwlkZsO5RIfFFNk4k5hvw</string>
+    <string name="google_maps_key">Your_Crendential_Key</string>
 </resources>
 
