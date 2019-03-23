@@ -23,13 +23,13 @@ public class FoodModel implements FoodContract.Model {
         this.presenter = presenter;
     }
 
+
+
     @SuppressLint("CheckResult")
     @Override
     public void fetchData() {
         db.foodDao().getAll().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
-                .subscribe(presenter::loadFoodItems, error -> {
-                    System.out.println("error");
-                }, () -> {
+                .subscribe(presenter::loadFoodItems, error -> System.out.println("error"), () -> {
                     System.out.println("complete");
                 });
     }
@@ -39,7 +39,6 @@ public class FoodModel implements FoodContract.Model {
     public void addFoodItem(FoodItem foodItem) {
         Completable.fromAction(() -> db.foodDao().insertFood(foodItem)).
                 subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(() ->{
-
         }, error -> {
         });
     }
@@ -48,7 +47,6 @@ public class FoodModel implements FoodContract.Model {
     public void deleteAllItem() {
         Completable.fromAction(() -> db.foodDao().deleteAllItems()).
                 subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(() ->{
-
         }, error -> {
         });
     }

@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import com.example.helislaptop.foodsharing.R;
 import com.example.helislaptop.foodsharing.foodList.FoodFragment;
 import com.example.helislaptop.foodsharing.map.MapFragment;
+import com.example.helislaptop.foodsharing.map.MapViewFragment;
 import com.example.helislaptop.foodsharing.setting.SettingFragment;
 
 /**
@@ -68,7 +69,7 @@ public class ContainerFragment extends FoodBasicFragment {
             case HOME_PAGE:
                 return FoodFragment.newInstance();
             case MAP_PAGE:
-                return new MapFragment();
+                return new MapViewFragment();
             case SETTING_PAGE:
                 return new SettingFragment();
             default:

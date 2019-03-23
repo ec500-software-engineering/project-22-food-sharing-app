@@ -30,8 +30,9 @@ public class FoodPresenter implements FoodContract.Presenter {
     @Override
     public void onViewAttached(FoodContract.View view) {
         this.view = view;
-        this.model.fetchData();
         model.deleteAllItem();
+        this.model.fetchData();
+
     }
 
     @Override
@@ -42,7 +43,7 @@ public class FoodPresenter implements FoodContract.Presenter {
 
     @Override
     public void loadFoodItems(List<FoodItem> foodItemList) {
-
+        //model.deleteAllItem();
         for (int i = 0; i < 10; i = i + 2) {
             FoodItem foodItem = new FoodItem();
             foodItem.setItemId(i);

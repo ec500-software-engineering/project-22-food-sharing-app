@@ -12,9 +12,15 @@ import com.example.helislaptop.foodsharing.common.ContainerFragment;
 import com.example.helislaptop.foodsharing.common.FoodBasicActivity;
 import com.example.helislaptop.foodsharing.common.FoodBasicFragment;
 import com.example.helislaptop.foodsharing.common.FoodFragmentPagerAdapter;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 
 public class MainActivity extends FoodBasicActivity {
-
+    private GoogleMap mMap;
     private ViewPager viewPager;
     private BottomNavigationView bottomBar;
     private FoodFragmentPagerAdapter adapter;
