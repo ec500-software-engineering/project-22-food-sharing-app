@@ -20,7 +20,6 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 public class MainActivity extends FoodBasicActivity {
-    private GoogleMap mMap;
     private ViewPager viewPager;
     private BottomNavigationView bottomBar;
     private FoodFragmentPagerAdapter adapter;

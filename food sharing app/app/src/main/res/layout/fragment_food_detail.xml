@@ -1,15 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_list_detail"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".foodList.detail.FoodDetailFragment">
+    >
+
+
+    <ImageView
+        android:id="@+id/food_detail_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/div_center"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="0dp"
+        android:background="@color/white" />
 
 
     <TextView
+        android:id="@+id/food_time"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/text"
-        android:text="This is food details" />
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/div_center"
+        android:background="@color/blue"
+        android:padding="16dp"
+        android:textColor="@color/white"
 
-</FrameLayout>
+        tools:text="2:43AM 09/7/2018" />
+
+    <View
+        android:id="@+id/div_center"
+
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_centerVertical="true"
+
+        />
+
+    <TextView
+        android:id="@+id/word"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/div_center"
+        android:text="Description of Food:"
+        android:padding="5dp"/>
+    <ImageView
+        android:id="@+id/post"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_above="@+id/food_time"
+        android:layout_alignParentRight="true"
+        />
+    <TextView
+        android:id="@+id/food_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/word"
+
+        android:background="@drawable/border"
+        android:padding="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        tools:text="Check out content like Fragmented Podcast to expose yourself to the knowledge, ideas, and opinions of experts in your field" />
+    <TextView
+        android:id="@+id/contact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Contact:617-XXXX-XXX"
+        android:padding="5dp"
+
+        android:layout_below="@+id/food_description"
+        />
+    <TextView
+        android:id="@+id/address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Address:xxx"
+        android:padding="5dp"
+        android:layout_below="@+id/contact"
+        />
+</RelativeLayout>

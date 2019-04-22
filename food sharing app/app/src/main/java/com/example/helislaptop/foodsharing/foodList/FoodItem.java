@@ -2,10 +2,12 @@ package com.example.helislaptop.foodsharing.foodList;
 
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.support.annotation.NonNull;
 
 @Entity(tableName = "foodItem")
-public class FoodItem{
+public class FoodItem implements Parcelable {
 
 
 
@@ -20,6 +22,28 @@ public class FoodItem{
     public String image;
     public String time;
     public String postOrRequest;
+
+    protected FoodItem(Parcel in) {
+        itemId = in.readInt();
+        owner = in.readString();
+        capacity = in.readInt();
+        description = in.readString();
+        image = in.readString();
+        time = in.readString();
+        postOrRequest = in.readString();
+    }
+
+    public static final Creator<FoodItem> CREATOR = new Creator<FoodItem>() {
+        @Override
+        public FoodItem createFromParcel(Parcel in) {
+            return new FoodItem(in);
+        }
+
+        @Override
+        public FoodItem[] newArray(int size) {
+            return new FoodItem[size];
+        }
+    };
 
     public void setOwner(String owner) {
         this.owner = owner;
@@ -83,4 +107,19 @@ public class FoodItem{
     }
 
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(itemId);
+        dest.writeString(owner);
+        dest.writeInt(capacity);
+        dest.writeString(description);
+        dest.writeString(image);
+        dest.writeString(time);
+        dest.writeString(postOrRequest);
+    }
 }

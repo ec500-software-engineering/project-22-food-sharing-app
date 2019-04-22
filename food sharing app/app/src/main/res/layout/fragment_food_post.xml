@@ -1,15 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_list_detail"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".foodList.foodPost.FoodPostFragment">
+    >
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <ImageView
+        android:id="@+id/food_detail_image"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_above="@+id/div_center"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="17dp"
+        android:background="@color/white" />
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="100dp"
+        android:layout_above="@id/div_center"
+        android:background="@drawable/ic_photo_camera_black_24dp"
+        />
 
-        android:text="Please make a new Food Post/Request" />
 
-</FrameLayout>
+
+    <View
+        android:id="@+id/div_center"
+
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_centerVertical="true"
+
+        />
+    <TextView
+        android:id="@+id/word_post1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Input the Owner/Requester:"
+        android:layout_below="@id/div_center"
+        />
+    <EditText
+        android:id="@+id/owner_info"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_below="@id/word_post1"
+        android:background="@drawable/border"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
+        android:padding="0dp"
+        />
+    <TextView
+        android:id="@+id/word_post2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Input food Description:"
+        android:layout_below="@id/owner_info"
+        />
+
+    <EditText
+        android:id="@+id/food_info"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_below="@id/word_post2"
+        android:layout_alignParentStart="true"
+        android:background="@drawable/border"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
+        android:padding="10dp" />
+    <TextView
+        android:id="@+id/word_post3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Contact_info:"
+        android:layout_below="@id/food_info"
+        />
+
+    <EditText
+        android:id="@+id/contact_info"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/word_post3"
+        android:layout_alignParentStart="true"
+        android:background="@drawable/border"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
+        android:padding="10dp" />
+    <View
+        android:id="@+id/div_center_vertical"
+
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/contact_info"
+        />
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/contact_info"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
+        android:layout_marginLeft="20dp"
+        android:layout_alignLeft="@+id/div_center_vertical"
+        android:layout_centerHorizontal="true"
+        android:background="@color/blue"
+        android:textColor="@color/white"
+        android:text="Post"
+        />
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
+        android:layout_below="@id/contact_info"
+        android:layout_alignRight="@+id/div_center_vertical"
+        android:layout_marginRight="20dp"
+        android:layout_centerHorizontal="true"
+        android:background="@color/blue"
+        android:textColor="@color/white"
+        android:text="Request"
+        />
+
+</RelativeLayout>

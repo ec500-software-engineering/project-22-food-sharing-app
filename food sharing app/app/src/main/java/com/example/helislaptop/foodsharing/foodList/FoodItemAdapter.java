@@ -47,7 +47,7 @@ public class FoodItemAdapter extends RecyclerView.Adapter<FoodItemAdapter.FoodIt
         holder.description.setText(foodItem.getDescription());
         holder.icon.setImageResource(getDrawable(foodItem.getPostOrRequest()));
         holder.itemView.setOnClickListener(v -> {
-            fragmentManager.doFragmentTransaction(FoodDetailFragment.newInstance());
+            fragmentManager.doFragmentTransaction(FoodDetailFragment.newInstance(foodItem));
         });
 
     }
