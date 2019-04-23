@@ -1,6 +1,7 @@
 package com.example.helislaptop.foodsharing.foodList.detail;
 
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.annotation.DrawableRes;
@@ -11,10 +12,16 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.helislaptop.foodsharing.FoodApplication;
 import com.example.helislaptop.foodsharing.R;
 import com.example.helislaptop.foodsharing.common.FoodBasicFragment;
+import com.example.helislaptop.foodsharing.database.AppDatabase;
 import com.example.helislaptop.foodsharing.foodList.FoodItem;
 import com.example.helislaptop.foodsharing.foodList.FoodItemAdapter;
+
+import io.reactivex.Completable;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -22,6 +29,7 @@ import com.example.helislaptop.foodsharing.foodList.FoodItemAdapter;
 public class FoodDetailFragment extends FoodBasicFragment {
     private static final String FOODITEM = "foodItem";
     private static int[] ICON_ARRAY = new int[]{R.drawable.post, R.drawable.request};
+    private final AppDatabase db = FoodApplication.getDataBase();
     private TextView descriptionView;
     private TextView timeView;
     private ImageView detailImage;
@@ -63,5 +71,15 @@ public class FoodDetailFragment extends FoodBasicFragment {
     private @DrawableRes
     int getDrawable(String postOrRequest) {
         return postOrRequest.equals("Post")? ICON_ARRAY[1] : ICON_ARRAY[0];
+    }
+
+
+    //Implement delete in detail fragment latter
+    @SuppressLint("CheckResult")
+    public void deleteFoodItem(FoodItem foodItem) {
+        Completable.fromAction(() -> db.foodDao().deleteFoodItem(foodItem)).
+                subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(() ->{
+        }, error -> {
+        });
     }
 }

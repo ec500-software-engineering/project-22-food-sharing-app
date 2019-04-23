@@ -6,11 +6,13 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.support.annotation.NonNull;
 
+import com.example.helislaptop.foodsharing.R;
+
+import java.util.Date;
+import java.util.Random;
+
 @Entity(tableName = "foodItem")
 public class FoodItem implements Parcelable {
-
-
-
 
     @PrimaryKey
     @NonNull
@@ -22,6 +24,22 @@ public class FoodItem implements Parcelable {
     public String image;
     public String time;
     public String postOrRequest;
+
+    public FoodItem(String owner, String description, String postOrRequest) {
+        this.owner = owner;
+        this.description = description;
+        this.time = new Date().toLocaleString();
+        this.postOrRequest = postOrRequest;
+        this.capacity = 2;
+        this.itemId = 10 + (int) (Math.random() * 1000000);
+        if (this.postOrRequest.equals("Post")) {
+            this.setImage("https://food.fnr.sndimg.com/content/dam/images/food/fullset/2018/6/0/FN_snapchat_coachella_wingman%20.jpeg.rend.hgtvcom.616.462.suffix/1523633513292.jpeg");
+
+        } else {
+            this.setImage("https://food.fnr.sndimg.com/content/dam/images/food/fullset/2018/6/0/FN_snapchat_coachella_wingman%20.jpeg.rend.hgtvcom.616.462.suffix/1523633513292.jpeg");
+        }
+    }
+
 
     protected FoodItem(Parcel in) {
         itemId = in.readInt();
