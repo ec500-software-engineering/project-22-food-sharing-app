@@ -1,5 +1,6 @@
 package com.example.helislaptop.foodsharing.common;
 
+import android.app.FragmentManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
@@ -13,6 +14,7 @@ public abstract class FoodBasicActivity extends AppCompatActivity implements Foo
         super.onCreate(savedInstanceState);
         setContentView(getLayout());
     }
+
 
     @Override
     public void startActivityWithBundle(Class<?> clazz, boolean isFinished, Bundle bundle) {

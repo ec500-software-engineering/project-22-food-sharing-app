@@ -52,7 +52,7 @@ public class FoodItemAdapter extends RecyclerView.Adapter<FoodItemAdapter.FoodIt
     @Override
     public void onBindViewHolder(FoodItemViewHolder holder, int position) {
         FoodItem foodItem = foodList.get(position);
-        holder.owner.setText(foodItem.getOwner());
+        holder.owner.setText(foodItem.getUser());
         holder.description.setText(foodItem.getDescription());
         holder.icon.setImageResource(getDrawable(foodItem.getPostOrRequest()));
         holder.itemView.setOnClickListener(v -> {
@@ -101,7 +101,7 @@ public class FoodItemAdapter extends RecyclerView.Adapter<FoodItemAdapter.FoodIt
     }
     private @DrawableRes
     int getDrawable(String postOrRequest) {
-        return postOrRequest.equals("Post")? ICON_ARRAY[1] : ICON_ARRAY[0];
+        return postOrRequest.equals("Post")? ICON_ARRAY[0] : ICON_ARRAY[1];
     }
 
 

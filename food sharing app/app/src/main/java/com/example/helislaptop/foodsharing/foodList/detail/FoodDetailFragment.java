@@ -70,7 +70,7 @@ public class FoodDetailFragment extends FoodBasicFragment {
     }
     private @DrawableRes
     int getDrawable(String postOrRequest) {
-        return postOrRequest.equals("Post")? ICON_ARRAY[1] : ICON_ARRAY[0];
+        return postOrRequest.equals("Post")? ICON_ARRAY[0] : ICON_ARRAY[1];
     }
 
 

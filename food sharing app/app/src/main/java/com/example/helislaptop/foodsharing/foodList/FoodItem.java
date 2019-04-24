@@ -8,47 +8,178 @@ import android.support.annotation.NonNull;
 
 import com.example.helislaptop.foodsharing.R;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Random;
 
 @Entity(tableName = "foodItem")
 public class FoodItem implements Parcelable {
 
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     @NonNull
     public int itemId;
 
-    public String owner;
-    public int capacity;
-    public String description;
-    public String image;
+    public String user;
+
     public String time;
+    public String capacity;
+    public String description;
+    public String foodImage;
     public String postOrRequest;
+    public double longitude;
+    public double latitude;
+    public String phoneNumber;
+    public String address;
+    public String category;
+    public String expiredTime;
 
-    public FoodItem(String owner, String description, String postOrRequest) {
-        this.owner = owner;
+    public FoodItem(String user, String description, String postOrRequest, String phoneNumber, String address, double longitude, double latitude, String category, String capacity, String expiredTime) {
+
+        try {
+
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+        this.user = user;
         this.description = description;
-        this.time = new Date().toLocaleString();
+        this.time = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
         this.postOrRequest = postOrRequest;
-        this.capacity = 2;
-        this.itemId = 10 + (int) (Math.random() * 1000000);
-        if (this.postOrRequest.equals("Post")) {
-            this.setImage("https://food.fnr.sndimg.com/content/dam/images/food/fullset/2018/6/0/FN_snapchat_coachella_wingman%20.jpeg.rend.hgtvcom.616.462.suffix/1523633513292.jpeg");
+        this.category = category;
+        this.address = address;
+        this.phoneNumber = phoneNumber;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.capacity = capacity;
+        this.expiredTime = expiredTime;
+        this.setFoodImage("https://food.fnr.sndimg.com/content/dam/images/food/fullset/2018/6/0/FN_snapchat_coachella_wingman%20.jpeg.rend.hgtvcom.616.462.suffix/1523633513292.jpeg");
 
-        } else {
-            this.setImage("https://food.fnr.sndimg.com/content/dam/images/food/fullset/2018/6/0/FN_snapchat_coachella_wingman%20.jpeg.rend.hgtvcom.616.462.suffix/1523633513292.jpeg");
+
+    }
+    public int parseIntWithDefault(String s, int defaultValue) {
+        try {
+            return Integer.parseInt(s);
+        } catch(NumberFormatException e) {
+            return defaultValue;
         }
     }
 
 
+    public String getUser() {
+        return user;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
+    public String getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(String capacity) {
+        this.capacity = capacity;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+
+    public String getFoodImage() {
+        return foodImage;
+    }
+
+    public void setFoodImage(String foodImage) {
+        this.foodImage = foodImage;
+    }
+
+    public String getPostOrRequest() {
+        return postOrRequest;
+    }
+
+    public void setPostOrRequest(String postOrRequest) {
+        this.postOrRequest = postOrRequest;
+    }
+
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
+    }
+
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public String getExpiredTime() {
+        return expiredTime;
+    }
+
+    public void setExpiredTime(String expiredTime) {
+        this.expiredTime = expiredTime;
+    }
+
+
+
+
+
     protected FoodItem(Parcel in) {
         itemId = in.readInt();
-        owner = in.readString();
-        capacity = in.readInt();
-        description = in.readString();
-        image = in.readString();
+        user = in.readString();
         time = in.readString();
+        capacity = in.readString();
+        description = in.readString();
+        foodImage = in.readString();
         postOrRequest = in.readString();
+        longitude = in.readDouble();
+        latitude = in.readDouble();
+        phoneNumber = in.readString();
+        address = in.readString();
+        category = in.readString();
+        expiredTime = in.readString();
     }
 
     public static final Creator<FoodItem> CREATOR = new Creator<FoodItem>() {
@@ -63,80 +194,20 @@ public class FoodItem implements Parcelable {
         }
     };
 
-    public void setOwner(String owner) {
-        this.owner = owner;
-    }
-
-    public void setCapacity(@NonNull int capacity) {
-        this.capacity = capacity;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
-    }
-
-    public void setTime(String time) {
-        this.time = time;
-    }
-
-    @NonNull
-    public int getItemId() {
-        return itemId;
-    }
-
-    public void setItemId(@NonNull int itemId) {
-        this.itemId = itemId;
-    }
-
-    public void setPostOrRequest(String postOrRequest) {
-        this.postOrRequest = postOrRequest;
-    }
-
-    public String getOwner() {
-        return owner;
-    }
-
-
-    public int getCapacity() {
-        return capacity;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public String getImage() {
-        return image;
-    }
-
-    public String getTime() {
-        return time;
-    }
-
-    public String getPostOrRequest() {
-        return postOrRequest;
-    }
-    public FoodItem() {
-
-    }
-
-
     @Override
     public int describeContents() {
         return 0;
     }
+    public FoodItem() {
 
+    }
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(itemId);
-        dest.writeString(owner);
-        dest.writeInt(capacity);
+        dest.writeString(user);
+        dest.writeString(capacity);
         dest.writeString(description);
-        dest.writeString(image);
+        dest.writeString(foodImage);
         dest.writeString(time);
         dest.writeString(postOrRequest);
     }

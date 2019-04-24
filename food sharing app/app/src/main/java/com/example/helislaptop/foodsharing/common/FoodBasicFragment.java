@@ -18,7 +18,7 @@ import java.util.UUID;
  */
 
 
-public class FoodBasicFragment extends Fragment  {
+public class FoodBasicFragment extends Fragment {
 
     protected FoodFragmentManager foodFragmentManager;
     private final String uuid = UUID.randomUUID().toString();
