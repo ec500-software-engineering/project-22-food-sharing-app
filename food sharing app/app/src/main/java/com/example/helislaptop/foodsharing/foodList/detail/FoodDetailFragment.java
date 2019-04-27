@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.annotation.DrawableRes;
 import android.support.v4.app.Fragment;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,12 +27,17 @@ import io.reactivex.schedulers.Schedulers;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class FoodDetailFragment extends FoodBasicFragment {
+public class FoodDetailFragment extends FoodBasicFragment{
     private static final String FOODITEM = "foodItem";
     private static int[] ICON_ARRAY = new int[]{R.drawable.post, R.drawable.request};
     private final AppDatabase db = FoodApplication.getDataBase();
     private TextView descriptionView;
-    private TextView timeView;
+    private TextView categoryView;
+    private TextView capacityView;
+    private TextView addressView;
+    private TextView phoneView;
+    private TextView ownerView;
+    //private TextView timeView;
     private ImageView detailImage;
     private ImageView postImage;
     public static FoodDetailFragment newInstance(FoodItem foodItem) {
@@ -48,11 +54,15 @@ public class FoodDetailFragment extends FoodBasicFragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_food_detail, container, false);
-
-        descriptionView = view.findViewById(R.id.food_description);
-        timeView = view.findViewById(R.id.food_time);
+        ownerView = view.findViewById(R.id.owner_detail_info);
+        descriptionView = view.findViewById(R.id.food_detail_description);
+        //timeView = view.findViewById(R.id.food_time);
         detailImage = view.findViewById(R.id.food_detail_image);
-        postImage = view.findViewById(R.id.post);
+        postImage = view.findViewById(R.id.post_detail);
+        categoryView = view.findViewById(R.id.food_detail_category);
+        capacityView = view.findViewById(R.id.food_detail_capacity);
+        addressView = view.findViewById(R.id.address_detail_info);
+        phoneView = view.findViewById(R.id.phone_number_detail_info);
         return view;
     }
 
@@ -64,9 +74,14 @@ public class FoodDetailFragment extends FoodBasicFragment {
 
     private void loadFoodItemDetail(FoodItem foodItem) {
         descriptionView.setText(foodItem.getDescription());
-        timeView.setText(foodItem.getTime());
+        //timeView.setText(foodItem.getTime());
         detailImage.setImageResource(R.drawable.food_detail_sample);
         postImage.setImageResource(getDrawable(foodItem.getPostOrRequest()));
+        ownerView.setText(foodItem.getUser());
+        categoryView.setText(foodItem.getCategory());
+        capacityView.setText(foodItem.getCapacity());
+        addressView.setText(foodItem.getAddress());
+        phoneView.setText(foodItem.getPhoneNumber());
     }
     private @DrawableRes
     int getDrawable(String postOrRequest) {
@@ -82,4 +97,6 @@ public class FoodDetailFragment extends FoodBasicFragment {
         }, error -> {
         });
     }
+
+
 }

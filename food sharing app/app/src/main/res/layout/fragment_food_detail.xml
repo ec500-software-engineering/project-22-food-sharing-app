@@ -7,12 +7,11 @@
     >
 
 
-
     <ImageView
         android:id="@+id/food_detail_image"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/div_center"
+        android:layout_above="@+id/div_detail_center"
         android:layout_alignParentStart="true"
         android:layout_marginStart="0dp"
         android:layout_marginBottom="-3dp"
@@ -20,18 +19,31 @@
 
 
     <TextView
-        android:id="@+id/food_time"
-        android:layout_width="match_parent"
+        android:id="@+id/owner_detail_label"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/div_center"
+        android:layout_above="@+id/div_detail_center"
         android:background="@color/blue"
         android:padding="16dp"
         android:textColor="@color/white"
+        android:text="Owner/Requester:"
+         />
+    <TextView
+        android:id="@+id/owner_detail_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/div_detail_center"
+        android:layout_marginLeft="2dp"
+        android:background="@color/blue"
+        android:padding="16dp"
+        android:textColor="@color/white"
+        android:layout_toRightOf="@id/owner_detail_label"
 
-        tools:text="2:43AM 09/7/2018" />
+        tools:text="Henry"
+        />
 
     <View
-        android:id="@+id/div_center"
+        android:id="@+id/div_detail_center"
 
         android:layout_width="match_parent"
         android:layout_height="1dp"
@@ -39,46 +51,104 @@
 
         />
 
-    <TextView
-        android:id="@+id/word"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/div_center"
-        android:text="Description of Food:"
-        android:padding="5dp"/>
+
     <ImageView
-        android:id="@+id/post"
+        android:id="@+id/post_detail"
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:layout_above="@+id/food_time"
+        android:layout_above="@+id/div_detail_center"
         android:layout_alignParentRight="true"
         />
     <TextView
-        android:id="@+id/food_description"
+        android:id="@+id/category_detail_label"
+        android:layout_width="210dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/div_detail_center"
+        android:text="Category:"
+        android:padding="5dp"/>
+    <TextView
+        android:id="@+id/food_detail_category"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/category_detail_label"
+
+        android:padding="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        tools:text="Chinese Food"
+        />
+    <TextView
+        android:id="@+id/capacity_detail_label"
+        android:layout_width="210dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/div_detail_center"
+        android:layout_toRightOf="@id/category_detail_label"
+        android:text="Capacity:"
+        android:padding="5dp"/>
+    <TextView
+        android:id="@+id/food_detail_capacity"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/category_detail_label"
+        android:layout_toRightOf="@id/food_detail_category"
+        android:padding="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        tools:text="3"
+        />
+    <TextView
+        android:id="@+id/description_detail_label"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/word"
+        android:layout_below="@+id/food_detail_category"
+        android:text="Description of Food:"
+        android:padding="5dp"/>
+    <TextView
+        android:id="@+id/food_detail_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/description_detail_label"
 
-        android:background="@drawable/border"
-        android:padding="5dp"
+        android:padding="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         tools:text="Check out content like Fragmented Podcast to expose yourself to the knowledge, ideas, and opinions of experts in your field" />
+
     <TextView
-        android:id="@+id/contact"
+        android:id="@+id/phone_number_detail_label"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Contact:617-XXXX-XXX"
+        android:text="Phone_Number:"
         android:padding="5dp"
 
-        android:layout_below="@+id/food_description"
+        android:layout_below="@+id/food_detail_description"
         />
     <TextView
-        android:id="@+id/address"
+        android:id="@+id/phone_number_detail_info"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Address:xxx"
+        android:layout_below="@+id/phone_number_detail_label"
+
+        android:padding="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        tools:text="617-XXXX-XXX"/>
+    <TextView
+        android:id="@+id/address_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Address:"
         android:padding="5dp"
-        android:layout_below="@+id/contact"
+        android:layout_below="@+id/phone_number_detail_info"
         />
+    <TextView
+        android:id="@+id/address_detail_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/address_detail"
+
+        android:padding="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        tools:text="xxx Street, Boston, MA"/>
 </RelativeLayout>

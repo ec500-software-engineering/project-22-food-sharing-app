@@ -40,7 +40,7 @@ public class MapViewFragment extends Fragment {
 
     MapView mMapView;
     private final AppDatabase db = FoodApplication.getDataBase();
-    private GoogleMap googleMap;
+    private static GoogleMap googleMap;
 
     public static List<FoodItem> foodItems;
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -86,15 +86,7 @@ public class MapViewFragment extends Fragment {
 
                 for (FoodItem item : foodItems) {
                     //String itemName = Integer.toString(item.itemId);
-
-                    LatLng  geoPoint = new LatLng(item.latitude,item.longitude);
-
-                    if (item.postOrRequest.equals("Post")) {
-                        googleMap.addMarker(new MarkerOptions().position(geoPoint).title(item.description).snippet("Food for 2").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
-                    } else {
-                        googleMap.addMarker(new MarkerOptions().position(geoPoint).title(item.description).snippet("Food request for 2").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
-                    }
-
+                    addDataMap(item);
                 }
 
                 //googleMap.clear();
@@ -134,6 +126,15 @@ public class MapViewFragment extends Fragment {
     public static void showDataMap(List<FoodItem> foodItemList) {
         foodItems = new ArrayList<>();
         foodItems.addAll(foodItemList);
+    }
+    public static void addDataMap(FoodItem foodItem) {
+        LatLng  geoPoint = new LatLng(foodItem.latitude,foodItem.longitude);
+
+        if (foodItem.postOrRequest.equals("Post")) {
+            googleMap.addMarker(new MarkerOptions().position(geoPoint).title("Food for " + foodItem.capacity).snippet(foodItem.description).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
+        } else {
+            googleMap.addMarker(new MarkerOptions().position(geoPoint).title("Request for " + foodItem.capacity).snippet(foodItem.description).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+        }
     }
 
 }
