@@ -13,6 +13,8 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.view.Gravity;
+import android.view.InputEvent;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,6 +31,7 @@ import com.example.helislaptop.foodsharing.common.FoodFragmentManager;
 import com.example.helislaptop.foodsharing.database.AppDatabase;
 import com.example.helislaptop.foodsharing.foodList.FoodFragment;
 import com.example.helislaptop.foodsharing.foodList.FoodItem;
+import com.example.helislaptop.foodsharing.map.MapViewFragment;
 
 import java.util.Date;
 import java.util.List;
@@ -40,7 +43,7 @@ import io.reactivex.schedulers.Schedulers;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class FoodPostFragment extends FoodBasicFragment {
+public class FoodPostFragment extends FoodBasicFragment{
     private TextView postionView;
     private LocationManager locationManager;
     private String locationProvider;
@@ -52,7 +55,11 @@ public class FoodPostFragment extends FoodBasicFragment {
     private final AppDatabase db = FoodApplication.getDataBase();
     private EditText ownerInput;
     private EditText descriptionInput;
-    private EditText contactInput;
+    private EditText phoneNumber;
+    private EditText address;
+    private EditText capacity;
+    private EditText category;
+
     private Button requestButton;
     private Button postButton;
 
@@ -71,8 +78,12 @@ public class FoodPostFragment extends FoodBasicFragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_food_post, container, false);
         ownerInput = view.findViewById(R.id.owner_info);
+
         descriptionInput = view.findViewById(R.id.food_info);
-        contactInput = view.findViewById(R.id.contact_info);
+        phoneNumber = view.findViewById(R.id.phone_number);
+        address = view.findViewById(R.id.address_info);
+        capacity = view.findViewById(R.id.capacity_info);
+        category = view.findViewById(R.id.category_info);
         Location myCurrentLocation = getCurrentLocation();
         requestButton = view.findViewById(R.id.request_button);
         requestButton.setOnClickListener(new View.OnClickListener() {
@@ -80,7 +91,8 @@ public class FoodPostFragment extends FoodBasicFragment {
             public void onClick(View v) {
                 if (ownerInput.getText() != null && ownerInput.getText().toString().length() != 0 && descriptionInput.getText() != null && descriptionInput.getText().toString().length() != 0) {
                     FoodItem foodItem = new FoodItem(ownerInput.getText().toString(), descriptionInput.getText().toString(),
-                            "Request", "", "", myLocation.getLongitude(), myLocation.getLatitude(), "","","");
+                            "Request", phoneNumber.getText().toString(), address.getText().toString(), myLocation.getLongitude(), myLocation.getLatitude(), category.getText().toString(),capacity.getText().toString(),
+                            "");
                     addFoodItem(foodItem);
                     //onBackPressed();
                     View tempView = LayoutInflater.from(getContext()).inflate(R.layout.toast_message, null);
@@ -126,6 +138,7 @@ public class FoodPostFragment extends FoodBasicFragment {
                     textView.setText("    A post has been made.");
                     toast.setView(tempView);
                     toast.show();
+                    MapViewFragment.addDataMap(foodItem);
                     foodFragmentManager.doFragmentTransaction(FoodFragment.newInstance());
                 } else {
 

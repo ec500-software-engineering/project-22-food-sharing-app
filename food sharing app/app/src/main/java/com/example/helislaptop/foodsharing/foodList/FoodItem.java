@@ -35,7 +35,7 @@ public class FoodItem implements Parcelable {
     public String expiredTime;
 
     public FoodItem(String user, String description, String postOrRequest, String phoneNumber, String address, double longitude, double latitude, String category, String capacity, String expiredTime) {
-
+        //改constructor
         try {
 
         } catch (Exception e){

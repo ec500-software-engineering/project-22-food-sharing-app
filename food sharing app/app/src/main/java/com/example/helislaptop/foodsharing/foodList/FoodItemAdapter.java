@@ -54,7 +54,12 @@ public class FoodItemAdapter extends RecyclerView.Adapter<FoodItemAdapter.FoodIt
         FoodItem foodItem = foodList.get(position);
         holder.owner.setText(foodItem.getUser());
         holder.description.setText(foodItem.getDescription());
+        holder.category.setText(foodItem.getCategory());
+        holder.capacity.setText(foodItem.getCapacity());
+
         holder.icon.setImageResource(getDrawable(foodItem.getPostOrRequest()));
+        holder.foodImage.setImageResource(R.drawable.food_detail_sample);
+
         holder.itemView.setOnClickListener(v -> {
             fragmentManager.doFragmentTransaction(FoodDetailFragment.newInstance(foodItem));
         });
@@ -70,13 +75,20 @@ public class FoodItemAdapter extends RecyclerView.Adapter<FoodItemAdapter.FoodIt
 
         TextView owner;
         TextView description;
+        TextView capacity;
+        TextView category;
         ImageView icon;
+        ImageView foodImage;
+
 
         public FoodItemViewHolder(View itemView) {
             super(itemView);
             owner = itemView.findViewById(R.id.owner);
             description = itemView.findViewById(R.id.description);
             icon = itemView.findViewById(R.id.image);
+            foodImage = itemView.findViewById(R.id.food_image);
+            capacity = itemView.findViewById(R.id.capacity);
+            category = itemView.findViewById(R.id.category);
         }
 
         ItemTouchHelper.SimpleCallback itemTouchHelperCallback = new ItemTouchHelper.SimpleCallback(0,
