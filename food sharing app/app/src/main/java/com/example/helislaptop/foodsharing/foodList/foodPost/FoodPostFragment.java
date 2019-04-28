@@ -4,14 +4,20 @@ package com.example.helislaptop.foodsharing.foodList.foodPost;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
+import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.InputEvent;
 import android.view.KeyEvent;
@@ -20,6 +26,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,19 +38,33 @@ import com.example.helislaptop.foodsharing.common.FoodFragmentManager;
 import com.example.helislaptop.foodsharing.database.AppDatabase;
 import com.example.helislaptop.foodsharing.foodList.FoodFragment;
 import com.example.helislaptop.foodsharing.foodList.FoodItem;
+import com.example.helislaptop.foodsharing.foodList.detail.FoodDetailFragment;
 import com.example.helislaptop.foodsharing.map.MapViewFragment;
 
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 import io.reactivex.Completable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 
+import static android.app.Activity.RESULT_OK;
+import static android.support.v4.content.ContextCompat.checkSelfPermission;
+import com.parse.FindCallback;
+import com.parse.ParseException;
+import com.parse.ParseFile;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
+import com.parse.ParseUser;
+import com.parse.SaveCallback;
+
 /**
  * A simple {@link Fragment} subclass.
  */
-public class FoodPostFragment extends FoodBasicFragment{
+public class FoodPostFragment extends FoodBasicFragment {
     private TextView postionView;
     private LocationManager locationManager;
     private String locationProvider;
@@ -62,7 +83,10 @@ public class FoodPostFragment extends FoodBasicFragment{
 
     private Button requestButton;
     private Button postButton;
+    private ImageView uploadButton;
+    private ImageView uploadedImage;
 
+    FoodFragmentManager foodFragmentManager;
     public static FoodPostFragment newInstance() {
 
         Bundle args = new Bundle();
@@ -85,6 +109,18 @@ public class FoodPostFragment extends FoodBasicFragment{
         capacity = view.findViewById(R.id.capacity_info);
         category = view.findViewById(R.id.category_info);
         Location myCurrentLocation = getCurrentLocation();
+        uploadedImage = view.findViewById(R.id.uploaded_image);
+        uploadButton = view.findViewById(R.id.upload_button);
+
+        uploadButton.setOnClickListener(v -> {
+            if (checkSelfPermission(getContext(),Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+
+                requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 1);
+            } else {
+                upload();
+            }
+        });
+
         requestButton = view.findViewById(R.id.request_button);
         requestButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -151,6 +187,51 @@ public class FoodPostFragment extends FoodBasicFragment{
         return view;
     }
 
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == 1) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                upload();
+            }
+        }
+    }
+    private void upload() {
+        Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        startActivityForResult(intent, 1);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == 1 && resultCode == RESULT_OK && data != null) {
+
+            Uri selectedImage = data.getData();
+
+            try {
+
+                Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContext().getContentResolver(), selectedImage);
+                uploadButton.setVisibility(uploadButton.GONE);
+                uploadedImage.setImageBitmap(bitmap);
+                //Log.i("Photo","Received");
+                ByteArrayOutputStream stream = new ByteArrayOutputStream();
+
+                bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
+                byte[] byteArray = stream.toByteArray();
+                ParseFile file = new ParseFile("image.png", byteArray);
+                ParseObject object = new ParseObject("image");
+                object.put("image", file);
+                String imageId = UUID.randomUUID().toString();
+                //object.put();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        }
+
+    }
+
     @SuppressLint("CheckResult")
     public void addFoodItem(FoodItem foodItem) {
         Completable.fromAction(() -> db.foodDao().insertFood(foodItem)).
@@ -183,7 +264,7 @@ public class FoodPostFragment extends FoodBasicFragment{
             return null;
         }
         //get Location
-        if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+        if (checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && checkSelfPermission(getContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
             //    ActivityCompat#requestPermissions
             // here to request the missing permissions, and then overriding

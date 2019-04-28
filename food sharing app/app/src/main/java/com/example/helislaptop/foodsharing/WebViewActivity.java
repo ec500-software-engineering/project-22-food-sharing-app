@@ -54,6 +54,7 @@ public class WebViewActivity extends FoodBasicActivity implements PopupMenu.OnMe
                 // TODO Auto-generated method stub
                 super.onPageFinished(view, url);
                 progressBar.setVisibility(View.GONE);
+
             }
         });
 //        Bundle bundle = getIntent().getExtras();

@@ -9,7 +9,7 @@
 
 
     <ImageView
-        android:id="@+id/food_detail_image"
+        android:id="@+id/uploaded_image"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/div_center"
@@ -19,6 +19,7 @@
         android:layout_marginBottom="17dp"
         android:background="@color/white" />
     <ImageView
+        android:id="@+id/upload_button"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_centerHorizontal="true"
