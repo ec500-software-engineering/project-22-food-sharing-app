@@ -17,7 +17,6 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.InputEvent;
 import android.view.KeyEvent;
@@ -38,8 +37,12 @@ import com.example.helislaptop.foodsharing.common.FoodFragmentManager;
 import com.example.helislaptop.foodsharing.database.AppDatabase;
 import com.example.helislaptop.foodsharing.foodList.FoodFragment;
 import com.example.helislaptop.foodsharing.foodList.FoodItem;
-import com.example.helislaptop.foodsharing.foodList.detail.FoodDetailFragment;
 import com.example.helislaptop.foodsharing.map.MapViewFragment;
+import com.parse.FindCallback;
+import com.parse.ParseException;
+import com.parse.ParseFile;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -52,19 +55,11 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 
 import static android.app.Activity.RESULT_OK;
-import static android.support.v4.content.ContextCompat.checkSelfPermission;
-import com.parse.FindCallback;
-import com.parse.ParseException;
-import com.parse.ParseFile;
-import com.parse.ParseObject;
-import com.parse.ParseQuery;
-import com.parse.ParseUser;
-import com.parse.SaveCallback;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class FoodPostFragment extends FoodBasicFragment {
+public class FoodPostFragment extends FoodBasicFragment{
     private TextView postionView;
     private LocationManager locationManager;
     private String locationProvider;
@@ -86,7 +81,6 @@ public class FoodPostFragment extends FoodBasicFragment {
     private ImageView uploadButton;
     private ImageView uploadedImage;
 
-    FoodFragmentManager foodFragmentManager;
     public static FoodPostFragment newInstance() {
 
         Bundle args = new Bundle();
@@ -111,15 +105,16 @@ public class FoodPostFragment extends FoodBasicFragment {
         Location myCurrentLocation = getCurrentLocation();
         uploadedImage = view.findViewById(R.id.uploaded_image);
         uploadButton = view.findViewById(R.id.upload_button);
-
         uploadButton.setOnClickListener(v -> {
-            if (checkSelfPermission(getContext(),Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            if (ActivityCompat.checkSelfPermission(getContext(),Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
 
                 requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 1);
             } else {
                 upload();
+                //uploadButton.setVisibility(View.GONE);
             }
         });
+
 
         requestButton = view.findViewById(R.id.request_button);
         requestButton.setOnClickListener(new View.OnClickListener() {
@@ -200,8 +195,6 @@ public class FoodPostFragment extends FoodBasicFragment {
         Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         startActivityForResult(intent, 1);
     }
-
-    @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
@@ -213,16 +206,29 @@ public class FoodPostFragment extends FoodBasicFragment {
 
                 Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContext().getContentResolver(), selectedImage);
                 uploadButton.setVisibility(uploadButton.GONE);
-                uploadedImage.setImageBitmap(bitmap);
+
                 //Log.i("Photo","Received");
                 ByteArrayOutputStream stream = new ByteArrayOutputStream();
 
                 bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
                 byte[] byteArray = stream.toByteArray();
-                ParseFile file = new ParseFile("image.png", byteArray);
+                String imageId = UUID.randomUUID().toString() + ".png";
+                ParseFile file = new ParseFile(imageId, byteArray);
                 ParseObject object = new ParseObject("image");
                 object.put("image", file);
-                String imageId = UUID.randomUUID().toString();
+                object.saveInBackground();
+                /*
+                ParseQuery<ParseObject> query = new ParseQuery<ParseObject>("Image");
+
+                query.whereEqualTo("image",imageId);
+                query.findInBackground(new FindCallback<ParseObject>() {
+                    @Override
+                    public void done(List<ParseObject> objects, ParseException e) {
+
+                    }
+                });
+                */
+                uploadedImage.setImageBitmap(bitmap);
                 //object.put();
             } catch (IOException e) {
                 e.printStackTrace();
@@ -231,6 +237,7 @@ public class FoodPostFragment extends FoodBasicFragment {
         }
 
     }
+
 
     @SuppressLint("CheckResult")
     public void addFoodItem(FoodItem foodItem) {
@@ -264,7 +271,7 @@ public class FoodPostFragment extends FoodBasicFragment {
             return null;
         }
         //get Location
-        if (checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && checkSelfPermission(getContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+        if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
             //    ActivityCompat#requestPermissions
             // here to request the missing permissions, and then overriding
@@ -286,7 +293,7 @@ public class FoodPostFragment extends FoodBasicFragment {
     private void showLocation(Location location){
         String locationStr = "Lat：" + location.getLatitude() +"\n"
                 + "Lon：" + location.getLongitude();
-        postionView.setText(locationStr);
+        //postionView.setText(locationStr);
     }
 
     LocationListener locationListener =  new LocationListener() {

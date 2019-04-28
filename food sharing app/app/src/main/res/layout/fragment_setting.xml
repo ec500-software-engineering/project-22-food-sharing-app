@@ -59,6 +59,17 @@
         android:layout_centerHorizontal="true"
         android:id="@+id/signupButton"
         />
+    <Button
+        android:text="Log Out"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/phone_number_profile"
+        android:layout_marginTop="20dp"
+        android:background="@color/blue"
+        android:textColor="@color/white"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/logoutButton"
+        />
 
     <TextView
         android:text="or, Login"

@@ -52,11 +52,14 @@ public class SettingFragment extends FoodBasicFragment {
     private EditText passwordText;
     private EditText usernameText;
     private Button signUpButton;
+    private Button logOutButton;
     private View settingView;
     public LayoutInflater inflater;
     public ViewGroup container;
     public Bundle bundle;
     //private TextView welcomeMessage;
+    private TextView userNameProfileWord;
+    private TextView phoneNumberProfileWord;
     private TextView userNameProfile;
     private TextView phoneNumberProfile;
 
@@ -85,12 +88,19 @@ public class SettingFragment extends FoodBasicFragment {
                 googleSignIn();
             });
             userNameProfile = settingView.findViewById(R.id.user_name_profile);
+            userNameProfileWord = settingView.findViewById(R.id.profile_word1);
             userNameProfile.setText(ParseUser.getCurrentUser().getUsername());
             userNameProfile.setVisibility(View.GONE);
+            userNameProfileWord.setVisibility(View.GONE);
             phoneNumberProfile = settingView.findViewById(R.id.phone_number_profile);
             phoneNumberProfile.setText(ParseUser.getCurrentUser().getEmail());
             phoneNumberProfile.setVisibility(View.GONE);
+            phoneNumberProfileWord = settingView.findViewById(R.id.profile_word2);
 
+            phoneNumberProfileWord.setVisibility(View.GONE);
+            logOutButton = settingView.findViewById(R.id.logoutButton);
+            logOutButton.setOnClickListener(v -> showLogIn());
+            phoneNumberProfile.setVisibility(View.GONE);
             changeSignupModeTextView = (TextView) settingView.findViewById(R.id.changeSignupModeTextView);
             changeSignupModeTextView.setOnClickListener(this::onClick);
             RelativeLayout backgroundRelativeLayout = (RelativeLayout) settingView.findViewById(R.id.backgroundRelativeLayout);
@@ -112,6 +122,23 @@ public class SettingFragment extends FoodBasicFragment {
             settingView = inflater.inflate(R.layout.user_info, container, false);
         }*/
         return settingView;
+    }
+
+    private void showLogIn() {
+        ParseUser.logOutInBackground();
+        isLogIn = false;
+        userNameProfile.setVisibility(View.GONE);
+        phoneNumberProfile.setVisibility(View.GONE);
+        logOutButton.setVisibility(View.GONE);
+        userNameProfileWord.setVisibility(View.GONE);
+        phoneNumberProfileWord.setVisibility(View.GONE);
+        signUpButton.setVisibility(View.VISIBLE);
+        googleSignInButton.setVisibility(View.VISIBLE);
+        changeSignupModeTextView.setVisibility(View.VISIBLE);
+        passwordText.setVisibility(View.VISIBLE);
+        usernameText.setVisibility(View.VISIBLE);
+
+
     }
 
     private void googleSignIn() {
@@ -171,9 +198,12 @@ public class SettingFragment extends FoodBasicFragment {
         changeSignupModeTextView.setVisibility(View.GONE);
         passwordText.setVisibility(View.GONE);
         usernameText.setVisibility(View.GONE);
-
+        userNameProfile.setText(ParseUser.getCurrentUser().getUsername());
         userNameProfile.setVisibility(View.VISIBLE);
         phoneNumberProfile.setVisibility(View.VISIBLE);
+        logOutButton.setVisibility(View.VISIBLE);
+        userNameProfileWord.setVisibility(View.VISIBLE);
+        phoneNumberProfileWord.setVisibility(View.VISIBLE);
         //settingView.setVisibility(View.VISIBLE);
 
     }
