@@ -70,13 +70,22 @@ public class SettingFragment extends FoodBasicFragment {
     }
 
     @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (ParseUser.getCurrentUser() != null) {
+            ParseUser.logOutInBackground();
+        }
+
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         this.inflater = inflater;
         this.container = container;
         this.bundle = savedInstanceState;
-        if (!isLogIn) {
+        //if (!isLogIn) {
             GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                     .requestEmail()
                     .build();
@@ -89,16 +98,17 @@ public class SettingFragment extends FoodBasicFragment {
             });
             userNameProfile = settingView.findViewById(R.id.user_name_profile);
             userNameProfileWord = settingView.findViewById(R.id.profile_word1);
-            userNameProfile.setText(ParseUser.getCurrentUser().getUsername());
+
             userNameProfile.setVisibility(View.GONE);
             userNameProfileWord.setVisibility(View.GONE);
             phoneNumberProfile = settingView.findViewById(R.id.phone_number_profile);
-            phoneNumberProfile.setText(ParseUser.getCurrentUser().getEmail());
+
             phoneNumberProfile.setVisibility(View.GONE);
             phoneNumberProfileWord = settingView.findViewById(R.id.profile_word2);
 
             phoneNumberProfileWord.setVisibility(View.GONE);
             logOutButton = settingView.findViewById(R.id.logoutButton);
+            logOutButton.setVisibility(View.GONE);
             logOutButton.setOnClickListener(v -> showLogIn());
             phoneNumberProfile.setVisibility(View.GONE);
             changeSignupModeTextView = (TextView) settingView.findViewById(R.id.changeSignupModeTextView);
@@ -113,12 +123,11 @@ public class SettingFragment extends FoodBasicFragment {
             signUpButton = settingView.findViewById(R.id.signupButton);
             signUpButton.setOnClickListener(v -> signUp());
 
-            if (ParseUser.getCurrentUser() != null) {
-                showUserInfo();
-            }
+            //ParseUser.logOutInBackground();
             //ParseAnalytics.trackAppOpenedInBackground(getActivity().getIntent());
 
-        } /*else {
+        //}
+        /*else {
             settingView = inflater.inflate(R.layout.user_info, container, false);
         }*/
         return settingView;
@@ -200,6 +209,7 @@ public class SettingFragment extends FoodBasicFragment {
         usernameText.setVisibility(View.GONE);
         userNameProfile.setText(ParseUser.getCurrentUser().getUsername());
         userNameProfile.setVisibility(View.VISIBLE);
+        phoneNumberProfile.setText(ParseUser.getCurrentUser().getEmail());
         phoneNumberProfile.setVisibility(View.VISIBLE);
         logOutButton.setVisibility(View.VISIBLE);
         userNameProfileWord.setVisibility(View.VISIBLE);

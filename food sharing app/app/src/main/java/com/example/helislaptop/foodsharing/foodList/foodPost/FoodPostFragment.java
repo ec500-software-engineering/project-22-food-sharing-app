@@ -129,19 +129,18 @@ public class FoodPostFragment extends FoodBasicFragment{
                     View tempView = LayoutInflater.from(getContext()).inflate(R.layout.toast_message, null);
                     TextView textView = tempView.findViewById(R.id.error);
                     textView.setText("    A request has been made.");
-
                     Toast toast = new Toast(getContext());
                     toast.setGravity(Gravity.CENTER, 0, 550);
                     toast.setDuration(Toast.LENGTH_LONG);
                     toast.setView(tempView);
                     toast.show();
+                    MapViewFragment.addDataMap(foodItem);
                     foodFragmentManager.doFragmentTransaction(FoodFragment.newInstance());
                 } else {
                     //Long s = new Date().getTime();
                     Toast errorToast = Toast.makeText(getContext(), "Please fill all required information!", Toast.LENGTH_LONG);
                     //Toast errorToast = Toast.makeText(getContext(),Double.toString(myLocation.getLatitude()),Toast.LENGTH_LONG);
                     errorToast.show();
-
                 }
             }
 
@@ -150,19 +149,13 @@ public class FoodPostFragment extends FoodBasicFragment{
         postButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 if (ownerInput.getText() != null && ownerInput.getText().toString().length() != 0 && descriptionInput.getText() != null && descriptionInput.getText().toString().length() != 0) {
-
-
                     FoodItem foodItem = new FoodItem(ownerInput.getText().toString(), descriptionInput.getText().toString(),
                             "Post", "", "", myLocation.getLongitude(), myLocation.getLatitude(), "","","");
-
                     addFoodItem(foodItem);
                     //onBackPressed();
                     View tempView = LayoutInflater.from(getContext()).inflate(R.layout.toast_message, null);
                     TextView textView = tempView.findViewById(R.id.error);
-
-
                     Toast toast = new Toast(getContext());
                     toast.setGravity(Gravity.CENTER, 0, 550);
                     toast.setDuration(Toast.LENGTH_LONG);
@@ -172,7 +165,6 @@ public class FoodPostFragment extends FoodBasicFragment{
                     MapViewFragment.addDataMap(foodItem);
                     foodFragmentManager.doFragmentTransaction(FoodFragment.newInstance());
                 } else {
-
                     Toast errorToast = Toast.makeText(getContext(), "Please fill all required information!", Toast.LENGTH_LONG);
                     errorToast.show();
                 }

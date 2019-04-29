@@ -35,7 +35,7 @@ public class FoodApplication extends Application {
                 .server("http://3.19.75.181:80/parse/")
                 .build()
         );
-        ParseUser.enableAutomaticUser();
+        //ParseUser.enableAutomaticUser();
         ParseACL defaultACL = new ParseACL();
         defaultACL.setPublicReadAccess(true);
         defaultACL.setPublicWriteAccess(true);

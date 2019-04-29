@@ -10,12 +10,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.helislaptop.foodsharing.FoodApplication;
 import com.example.helislaptop.foodsharing.R;
 import com.example.helislaptop.foodsharing.common.FoodFragmentManager;
 import com.example.helislaptop.foodsharing.database.AppDatabase;
 import com.example.helislaptop.foodsharing.foodList.detail.FoodDetailFragment;
+import com.parse.Parse;
+import com.parse.ParseUser;
 
 import java.util.LinkedList;
 import java.util.List;

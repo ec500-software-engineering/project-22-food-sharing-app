@@ -1,17 +1,20 @@
 package com.example.helislaptop.foodsharing.foodList;
 
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.helislaptop.foodsharing.R;
 import com.example.helislaptop.foodsharing.common.FoodBasicFragment;
@@ -21,6 +24,7 @@ import com.example.helislaptop.foodsharing.foodList.foodPost.FoodPostFragment;
 import com.example.helislaptop.foodsharing.mvp.FoodContract;
 import com.example.helislaptop.foodsharing.mvp.FoodPresenter;
 import com.example.helislaptop.foodsharing.mvp.MvpFragment;
+import com.parse.ParseUser;
 
 import java.util.List;
 
@@ -56,7 +60,17 @@ public class FoodFragment extends MvpFragment<FoodContract.Presenter> implements
         ImageView buttonView;
         buttonView = view.findViewById(R.id.add_button);
         buttonView.setImageResource(R.drawable.add);
-        buttonView.setOnClickListener(v -> foodFragmentManager.doFragmentTransaction(FoodPostFragment.newInstance()));
+        //ParseUser.logOutInBackground();
+        //Log.i("user",ParseUser.getCurrentUser().toString());
+        buttonView.setOnClickListener(v -> {
+                if (ParseUser.getCurrentUser() != null) {
+                    foodFragmentManager.doFragmentTransaction(FoodPostFragment.newInstance());
+                } else {
+                    Toast.makeText((Context) getContext(), "Please log in first!", Toast.LENGTH_LONG).show();
+                }
+            }
+        );
+
         return view;
     }
 
