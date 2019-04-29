@@ -71,3 +71,8 @@ Google map API will be used on this page to display the food posts (blue) and re
 <p align="center"> 
 <img src="https://github.com/ec500-software-engineering/project-team-22-food-sharing-app/blob/master/pics/settingPage.gif">
 </p>
+
+### Backend deployment
+#### AWS EC2
+Amazon Elastic Compute Cloud (Amazon EC2) provides scalable computing capacity in the Amazon Web Services (AWS) cloud.
+
