@@ -8,10 +8,10 @@
 <img src="https://github.com/ec500-software-engineering/project-team-22-food-sharing-app/blob/master/pics/modular%20structure.png">
 </p>
 
-## Technologies to be used
+## Technologies used
 ### FrontEnd:
 Display: Recycler View
-<br>Map: Google Map API Parse API
+<br>Map: Google Map API
 <br>Platform: Android Studio
 <br>Database: MongoDB
 <br>Structure: MVP structure
@@ -26,6 +26,7 @@ Cloud: AWS/Parse
 ## APIs
 Google map API to display nearby food post and request on map
 <br>Parse API to store data on cloud
+
 ## Task assignments
 He Li: Overall layout, Recycler View, Goole Map API, MVP structure
 <br>ZBY: AWS server, Backend storage, login interface, data connections from server
@@ -56,6 +57,16 @@ Google map API will be used on this page to display the food posts (blue) and re
 
 ## Progress So Far
 ### Display fake data with Recycler View
+#### Recycler view
+The RecyclerView widget is a more advanced and flexible version of ListView.
+In the RecyclerView model, several different components work together to display your data. 
+
+The RecyclerView creates only as many view holders as are needed to display the on-screen portion of the dynamic content, plus a few extra. As the user scrolls through the list, the RecyclerView takes the off-screen views and rebinds them to the data which is scrolling onto the screen.
+
+#### The MVP structure
+Model–view–presenter (MVP) is a derivation of the model–view–controller (MVC) architectural pattern, and is used mostly for building user interfaces.
+
+In MVP, the presenter assumes the functionality of the "middle-man". In MVP, all presentation logic is pushed to the presenter.
 #### Click Post details and make new post button will go to a new fragment
 <p align="center"> 
 <img src="https://github.com/ec500-software-engineering/project-team-22-food-sharing-app/blob/master/pics/foodPage.gif">
@@ -75,4 +86,13 @@ Google map API will be used on this page to display the food posts (blue) and re
 ### Backend deployment
 #### AWS EC2
 Amazon Elastic Compute Cloud (Amazon EC2) provides scalable computing capacity in the Amazon Web Services (AWS) cloud.
+<img src="https://github.com/ec500-software-engineering/project-22-food-sharing-app/blob/master/pics/AWS.jpg">
+</p>
 
+#### Parse Server
+Parse Server is an open source version of the Parse backend that can be deployed to any infrastructure that can run Node.js.
+
+Parse Server works with the Express web application framework. It can be added to existing web applications, or run by itself.
+<img src="https://github.com/ec500-software-engineering/project-22-food-sharing-app/blob/master/pics/Parse.jpg">
+
+As shown in the picture, all the data including user info, user requests and images are stored by category in our backend database.
