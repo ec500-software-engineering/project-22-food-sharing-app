@@ -27,12 +27,13 @@ Cloud: AWS/Parse
 Google map API to display nearby food post and request on map
 <br>Parse API to store data on cloud
 ## Task assignments
-He Li: Overall layout, Recycler View, Google Room / Firebase, MVP structure
-<br>ZBY: Google Map API, AWS, Backend storage, login interface
+He Li: Overall layout, Recycler View, Goole Map API, MVP structure
+<br>ZBY: AWS server, Backend storage, login interface, data connections from server
 
-## Definition of Sprint 1 and 2
+## Definition of Sprint 1, 2 and 3
 Sprint 1: Research on how to use recycler view, room and google map API. Optimize design, specify what tool to use.
 <br>Sprint 2: Overall layout and simple post feature done
+<br>Sprint 3: Use AWS for server deployment and Parse for cloud database
 
 ## Project infrastructure
 One main activity, with a top bar and bottom navigator bar and a view pager in the mid.
