@@ -2,6 +2,8 @@ package com.example.helislaptop.foodsharing.foodList.detail;
 
 
 import android.annotation.SuppressLint;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.annotation.DrawableRes;
@@ -19,6 +21,12 @@ import com.example.helislaptop.foodsharing.common.FoodBasicFragment;
 import com.example.helislaptop.foodsharing.database.AppDatabase;
 import com.example.helislaptop.foodsharing.foodList.FoodItem;
 import com.example.helislaptop.foodsharing.foodList.FoodItemAdapter;
+import com.parse.ParseException;
+import com.parse.ParseFile;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
+
+import java.util.List;
 
 import io.reactivex.Completable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -75,7 +83,22 @@ public class FoodDetailFragment extends FoodBasicFragment{
     private void loadFoodItemDetail(FoodItem foodItem) {
         descriptionView.setText(foodItem.getDescription());
         //timeView.setText(foodItem.getTime());
-        detailImage.setImageResource(R.drawable.food_detail_sample);
+        ParseQuery<ParseObject> query = new ParseQuery<ParseObject>("Image");
+        query.whereEqualTo("ImageId",foodItem.foodImage);
+        //Log.i("imageName",foodItem.foodImage.substring(4));
+        query.orderByDescending("createdAt");
+        Bitmap bitmap = null;
+        try {
+            List<ParseObject> objectList = query.find();
+            ParseObject object = objectList.get(0);
+            ParseFile file = (ParseFile) object.get("Image");
+            byte[] data = file.getData();
+            bitmap = BitmapFactory.decodeByteArray(data, 0, data.length);
+
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        detailImage.setImageBitmap(bitmap);
         postImage.setImageResource(getDrawable(foodItem.getPostOrRequest()));
         ownerView.setText(foodItem.getUser());
         categoryView.setText(foodItem.getCategory());
