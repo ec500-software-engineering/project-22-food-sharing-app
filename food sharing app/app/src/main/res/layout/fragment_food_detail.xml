@@ -20,7 +20,7 @@
 
     <TextView
         android:id="@+id/owner_detail_label"
-        android:layout_width="150dp"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_above="@+id/div_detail_center"
         android:background="@color/blue"

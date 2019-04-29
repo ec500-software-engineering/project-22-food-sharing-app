@@ -4,6 +4,7 @@ package com.example.helislaptop.foodsharing.map;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.pm.PackageManager;
+import android.location.Location;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
@@ -11,11 +12,15 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.example.helislaptop.foodsharing.FoodApplication;
+import com.example.helislaptop.foodsharing.MainActivity;
+import com.example.helislaptop.foodsharing.ParseDatabase.FetchDataFromParse;
 import com.example.helislaptop.foodsharing.R;
 import com.example.helislaptop.foodsharing.database.AppDatabase;
 import com.example.helislaptop.foodsharing.database.FoodDao;
+import com.example.helislaptop.foodsharing.foodList.FoodFragment;
 import com.example.helislaptop.foodsharing.foodList.FoodItem;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -39,18 +44,37 @@ import io.reactivex.schedulers.Schedulers;
 public class MapViewFragment extends Fragment {
 
     MapView mMapView;
+    private ImageView refreshButton;
     private final AppDatabase db = FoodApplication.getDataBase();
     private static GoogleMap googleMap;
 
     public static List<FoodItem> foodItems;
+
+
+
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        fetchData();
+        foodItems = new FetchDataFromParse().fetchDataFromParse();
+        showDataMap(foodItems);
     }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_map, container, false);
+        refreshButton = rootView.findViewById(R.id.refresh_button);
+        refreshButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MapViewFragment.clearMarkers();
 
+                foodItems = new FetchDataFromParse().fetchDataFromParse();
+                showDataMap(foodItems);
+                for (FoodItem item : foodItems) {
+                    //String itemName = Integer.toString(item.itemId);
+                    addDataMap(item);
+                }
+                addMyLocation(FoodFragment.myLocation);
+            }
+        });
         mMapView = rootView.findViewById(R.id.map);
         mMapView.onCreate(savedInstanceState);
 
@@ -70,10 +94,11 @@ public class MapViewFragment extends Fragment {
                 // For showing a move to my location button
 
                 // For dropping a marker at a point on the Map
-                LatLng boston1 = new LatLng(42.349319,-71.106722);
-                googleMap.addMarker(new MarkerOptions().position(boston1).title("Photonic Center").snippet("Your Location"));
+                //LatLng boston1 = new LatLng(42.349319,-71.106722);
+                //googleMap.addMarker(new MarkerOptions().position(boston1).title("Photonic Center").snippet("Your Location"));
                 // For zooming automatically to the location of the marker
                 /*
+
                 LatLng bostonFoodPost1 = new LatLng(42.34129,-71.128235);
                 LatLng bostonFoodPost2 = new LatLng(42.331139, -71.099396);
                 LatLng bostonFoodRequest1 = new LatLng(42.364125, -71.104202);
@@ -82,7 +107,9 @@ public class MapViewFragment extends Fragment {
                 googleMap.addMarker(new MarkerOptions().position(bostonFoodRequest1).title("FoodRequest1").snippet("Request for 2").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
                    */
 
-
+                Location myLocation = FoodFragment.myLocation;
+                LatLng myCurrentLocation = new LatLng(myLocation.getLatitude(),myLocation.getLongitude());
+                googleMap.addMarker(new MarkerOptions().position(myCurrentLocation).title("My Current Location"));
 
                 for (FoodItem item : foodItems) {
                     //String itemName = Integer.toString(item.itemId);
@@ -90,12 +117,18 @@ public class MapViewFragment extends Fragment {
                 }
 
                 //googleMap.clear();
-                CameraPosition cameraPosition = new CameraPosition.Builder().target(boston1).zoom(13).build();
+                CameraPosition cameraPosition = new CameraPosition.Builder().target(myCurrentLocation).zoom(13).build();
                 googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
             }
         });
 
         return rootView;
+    }
+
+    private void addMyLocation(Location myLocation) {
+        LatLng myCurrentLocation = new LatLng(myLocation.getLatitude(),myLocation.getLongitude());
+        googleMap.addMarker(new MarkerOptions().position(myCurrentLocation).title("My Current Location"));
+
     }
 
     @Override
@@ -135,6 +168,9 @@ public class MapViewFragment extends Fragment {
         } else {
             googleMap.addMarker(new MarkerOptions().position(geoPoint).title("Request for " + foodItem.capacity).snippet(foodItem.description).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
         }
+    }
+    public static void clearMarkers() {
+        googleMap.clear();
     }
 
 }
