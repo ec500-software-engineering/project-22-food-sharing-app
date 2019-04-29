@@ -11,7 +11,7 @@
 ## Technologies used
 ### FrontEnd:
 Display: Recycler View
-<br>Map: Google Map API & Parse API
+<br>Map: Google Map API
 <br>Platform: Android Studio
 <br>Database: MongoDB
 <br>Structure: MVP structure
