@@ -83,3 +83,5 @@ Parse Server is an open source version of the Parse backend that can be deployed
 
 Parse Server works with the Express web application framework. It can be added to existing web applications, or run by itself.
 <img src="https://github.com/ec500-software-engineering/project-22-food-sharing-app/blob/master/pics/Parse.jpg">
+
+As shown in the picture, all the data including user info, user requests and images are stored by category in our backend database.
