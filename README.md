@@ -19,15 +19,16 @@ Display: Recycler View
 
 
 ### BackEnd
-Cloud: AWS/Google Cloud
+Cloud: AWS/Parse
 <br>ElasticSearch to store the post/request and support geo search
-<br>Google Cloud Storage to store all images and data
+<br>Parse server to mange all the backend data including requests, user info and images.
 
 ## APIs
 Google map API to display nearby food post and request on map
+Parse API to store data on cloud
 ## Task assignments
 He Li: Overall layout, Recycler View, Google Room / Firebase, MVP structure
-<br>ZBY: Google Map API, AWS/Google Cloud
+<br>ZBY: Google Map API, AWS, Backend storage, login interface
 
 ## Definition of Sprint 1 and 2
 Sprint 1: Research on how to use recycler view, room and google map API. Optimize design, specify what tool to use.
