@@ -77,6 +77,7 @@ Google map API will be used on this page to display the food posts (blue) and re
 Amazon Elastic Compute Cloud (Amazon EC2) provides scalable computing capacity in the Amazon Web Services (AWS) cloud.
 <img src="https://github.com/ec500-software-engineering/project-22-food-sharing-app/blob/master/pics/AWS.jpg">
 </p>
+
 #### Parse Server
 Parse Server is an open source version of the Parse backend that can be deployed to any infrastructure that can run Node.js.
 
