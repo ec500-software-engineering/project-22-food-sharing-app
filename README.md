@@ -5,7 +5,7 @@
 
 ## Modular architecture
 <p align="center"> 
-<img src="https://github.com/ec500-software-engineering/project-team-22-food-sharing-app/blob/master/pics/modular%20structure.png">
+<img src="https://github.com/ec500-software-engineering/project-22-food-sharing-app/blob/master/pics/Structure.png">
 </p>
 
 ## Technologies used
