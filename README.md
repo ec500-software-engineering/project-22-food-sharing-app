@@ -11,9 +11,9 @@
 ## Technologies to be used
 ### FrontEnd:
 Display: Recycler View
-<br>Map: Google Map API
+<br>Map: Google Map API Parse API
 <br>Platform: Android Studio
-<br>Database: Google Room / Firebase 
+<br>Database: MongoDB
 <br>Structure: MVP structure
 <br>Debug: Setho
 
@@ -25,7 +25,7 @@ Cloud: AWS/Parse
 
 ## APIs
 Google map API to display nearby food post and request on map
-Parse API to store data on cloud
+<br>Parse API to store data on cloud
 ## Task assignments
 He Li: Overall layout, Recycler View, Google Room / Firebase, MVP structure
 <br>ZBY: Google Map API, AWS, Backend storage, login interface
