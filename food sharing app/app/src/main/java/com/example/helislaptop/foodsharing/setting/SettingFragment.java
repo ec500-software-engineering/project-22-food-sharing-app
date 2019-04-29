@@ -30,15 +30,18 @@ import com.example.helislaptop.foodsharing.common.FoodBasicFragment;
 import com.example.helislaptop.foodsharing.foodList.FoodItemAdapter;
 import com.example.helislaptop.foodsharing.foodList.foodPost.FoodPostFragment;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.SignInButton;
 import com.parse.LogInCallback;
 import com.parse.ParseAnalytics;
 import com.parse.ParseException;
+import com.parse.ParseObject;
 import com.parse.ParseUser;
 import com.parse.SignUpCallback;
 
+import static android.app.Activity.RESULT_OK;
 import static android.content.Context.INPUT_METHOD_SERVICE;
 
 /**
@@ -154,6 +157,29 @@ public class SettingFragment extends FoodBasicFragment {
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();
         startActivityForResult(signInIntent, RC_SIGN_IN);
     }
+    /*
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(getContext());
+        if (account != null) {
+            String userName = account.getDisplayName();
+            String email = account.getEmail();
+            ParseObject object = new ParseObject("user");
+            object.put("user", userName);
+            object.put("email", email);
+            try {
+                object.save();
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+            showUserInfo();
+        }
+    }
+    */
+
+
+
     public boolean onKey(View view, int i, KeyEvent keyEvent) {
         if (i == KeyEvent.KEYCODE_ENTER && keyEvent.getAction() == KeyEvent.ACTION_DOWN) {
             signUp();

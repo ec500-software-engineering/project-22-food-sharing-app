@@ -34,8 +34,8 @@ public class FoodItem implements Parcelable {
     public String category;
     public String expiredTime;
 
-    public FoodItem(String user, String description, String postOrRequest, String phoneNumber, String address, double longitude, double latitude, String category, String capacity, String expiredTime) {
-        //改constructor
+    public FoodItem(String user, String description, String postOrRequest, String phoneNumber, String address, double longitude, double latitude, String category, String capacity, String expiredTime, String foodImage) {
+
         try {
 
         } catch (Exception e){
@@ -52,9 +52,7 @@ public class FoodItem implements Parcelable {
         this.longitude = longitude;
         this.capacity = capacity;
         this.expiredTime = expiredTime;
-        this.setFoodImage("https://food.fnr.sndimg.com/content/dam/images/food/fullset/2018/6/0/FN_snapchat_coachella_wingman%20.jpeg.rend.hgtvcom.616.462.suffix/1523633513292.jpeg");
-
-
+        this.foodImage = foodImage;
     }
     public int parseIntWithDefault(String s, int defaultValue) {
         try {

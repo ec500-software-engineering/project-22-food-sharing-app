@@ -78,6 +78,7 @@ public class FoodPostFragment extends FoodBasicFragment{
 
     private Button requestButton;
     private Button postButton;
+    private String imageId;
     private ImageView uploadButton;
     private ImageView uploadedImage;
 
@@ -120,11 +121,12 @@ public class FoodPostFragment extends FoodBasicFragment{
         requestButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (ownerInput.getText() != null && ownerInput.getText().toString().length() != 0 && descriptionInput.getText() != null && descriptionInput.getText().toString().length() != 0) {
+                if (imageId != null && ownerInput.getText() != null && ownerInput.getText().toString().length() != 0 && descriptionInput.getText() != null && descriptionInput.getText().toString().length() != 0) {
                     FoodItem foodItem = new FoodItem(ownerInput.getText().toString(), descriptionInput.getText().toString(),
                             "Request", phoneNumber.getText().toString(), address.getText().toString(), myLocation.getLongitude(), myLocation.getLatitude(), category.getText().toString(),capacity.getText().toString(),
-                            "");
+                            "", imageId);
                     addFoodItem(foodItem);
+                    AddToParse(foodItem);
                     //onBackPressed();
                     View tempView = LayoutInflater.from(getContext()).inflate(R.layout.toast_message, null);
                     TextView textView = tempView.findViewById(R.id.error);
@@ -149,11 +151,14 @@ public class FoodPostFragment extends FoodBasicFragment{
         postButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (ownerInput.getText() != null && ownerInput.getText().toString().length() != 0 && descriptionInput.getText() != null && descriptionInput.getText().toString().length() != 0) {
+                if (imageId != null && ownerInput.getText() != null && ownerInput.getText().toString().length() != 0 && descriptionInput.getText() != null && descriptionInput.getText().toString().length() != 0) {
                     FoodItem foodItem = new FoodItem(ownerInput.getText().toString(), descriptionInput.getText().toString(),
-                            "Post", "", "", myLocation.getLongitude(), myLocation.getLatitude(), "","","");
+                            "Post", phoneNumber.getText().toString(), address.getText().toString(), myLocation.getLongitude(), myLocation.getLatitude(), category.getText().toString(),capacity.getText().toString(),
+                            "", imageId);
+
                     addFoodItem(foodItem);
                     //onBackPressed();
+                    AddToParse(foodItem);
                     View tempView = LayoutInflater.from(getContext()).inflate(R.layout.toast_message, null);
                     TextView textView = tempView.findViewById(R.id.error);
                     Toast toast = new Toast(getContext());
@@ -172,6 +177,25 @@ public class FoodPostFragment extends FoodBasicFragment{
 
         });
         return view;
+    }
+
+    private void AddToParse(FoodItem foodItem) {
+        ParseObject object = new ParseObject("FoodItem");
+        object.put("user",foodItem.user);
+        object.put("time",foodItem.time);
+        object.put("capacity",foodItem.capacity);
+        object.put("description",foodItem.description);
+
+        object.put("foodImage",imageId);
+
+        object.put("postOrRequest",foodItem.postOrRequest);
+        object.put("longitude",foodItem.longitude);
+        object.put("latitude",foodItem.latitude);
+        object.put("phoneNumber",foodItem.phoneNumber);
+        object.put("address",foodItem.address);
+        object.put("category",foodItem.category);
+        object.put("expiredTime",foodItem.expiredTime);
+        object.saveInBackground();
     }
 
     @Override
@@ -204,22 +228,12 @@ public class FoodPostFragment extends FoodBasicFragment{
 
                 bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
                 byte[] byteArray = stream.toByteArray();
-                String imageId = UUID.randomUUID().toString() + ".png";
+                imageId = UUID.randomUUID().toString() + ".png";
                 ParseFile file = new ParseFile(imageId, byteArray);
-                ParseObject object = new ParseObject("image");
-                object.put("image", file);
+                ParseObject object = new ParseObject("Image");
+                object.put("Image", file);
+                object.put("ImageId",imageId);
                 object.saveInBackground();
-                /*
-                ParseQuery<ParseObject> query = new ParseQuery<ParseObject>("Image");
-
-                query.whereEqualTo("image",imageId);
-                query.findInBackground(new FindCallback<ParseObject>() {
-                    @Override
-                    public void done(List<ParseObject> objects, ParseException e) {
-
-                    }
-                });
-                */
                 uploadedImage.setImageBitmap(bitmap);
                 //object.put();
             } catch (IOException e) {
@@ -260,7 +274,7 @@ public class FoodPostFragment extends FoodBasicFragment{
             myLocation.setLatitude(lat);
             Toast.makeText(getContext(), "Can't get Geo location", Toast.LENGTH_SHORT).show();
 
-            return null;
+            return myLocation;
         }
         //get Location
         if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
@@ -273,13 +287,13 @@ public class FoodPostFragment extends FoodBasicFragment{
             // for ActivityCompat#requestPermissions for more details.
             return null;
         }
-        Location location = locationManager.getLastKnownLocation(locationProvider);
-        if(location!=null){
-            showLocation(location);
+        myLocation = locationManager.getLastKnownLocation(locationProvider);
+        if(myLocation!=null){
+            showLocation(myLocation);
         }
 
         locationManager.requestLocationUpdates(locationProvider, 3000, 1, locationListener);
-        return location;
+        return myLocation;
     }
 
     private void showLocation(Location location){

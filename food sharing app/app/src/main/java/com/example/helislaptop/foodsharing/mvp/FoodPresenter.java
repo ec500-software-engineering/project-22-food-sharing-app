@@ -1,5 +1,6 @@
 package com.example.helislaptop.foodsharing.mvp;
 
+import com.example.helislaptop.foodsharing.ParseDatabase.FetchDataFromParse;
 import com.example.helislaptop.foodsharing.foodList.FoodItem;
 
 import java.text.SimpleDateFormat;
@@ -31,8 +32,8 @@ public class FoodPresenter implements FoodContract.Presenter {
     public void onViewAttached(FoodContract.View view) {
         this.view = view;
         //model.deleteAllItem();
-        this.model.fetchData();
-
+        //this.model.fetchData();
+        loadFoodItems(new FetchDataFromParse().fetchDataFromParse());
     }
 
     @Override

@@ -16,6 +16,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.helislaptop.foodsharing.ParseDatabase.FetchDataFromParse;
 import com.example.helislaptop.foodsharing.R;
 import com.example.helislaptop.foodsharing.common.FoodBasicFragment;
 import com.example.helislaptop.foodsharing.common.FoodFragmentManager;
@@ -57,6 +58,7 @@ public class FoodFragment extends MvpFragment<FoodContract.Presenter> implements
         emptyState = view.findViewById(R.id.empty_state);
         foodItemAdapter = new FoodItemAdapter(foodFragmentManager);
         recyclerView.setAdapter(foodItemAdapter);
+
         ImageView buttonView;
         buttonView = view.findViewById(R.id.add_button);
         buttonView.setImageResource(R.drawable.add);
