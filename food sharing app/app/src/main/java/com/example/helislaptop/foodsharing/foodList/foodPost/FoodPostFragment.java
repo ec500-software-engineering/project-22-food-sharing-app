@@ -120,7 +120,7 @@ public class FoodPostFragment extends FoodBasicFragment {
         requestButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (imageId != null && ownerInput.getText() != null && ownerInput.getText().toString().length() != 0 && descriptionInput.getText() != null && descriptionInput.getText().toString().length() != 0) {
+                if (phoneNumber != null && capacity != null && imageId != null && ownerInput.getText() != null && ownerInput.getText().toString().length() != 0 && descriptionInput.getText() != null && descriptionInput.getText().toString().length() != 0) {
                     FoodItem foodItem = new FoodItem(ownerInput.getText().toString(), descriptionInput.getText().toString(),
                             "Request", phoneNumber.getText().toString(), address.getText().toString(), myLocation.getLongitude(), myLocation.getLatitude(), category.getText().toString(), capacity.getText().toString(),
                             "", imageId);
@@ -150,7 +150,7 @@ public class FoodPostFragment extends FoodBasicFragment {
         postButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (imageId != null && ownerInput.getText() != null && ownerInput.getText().toString().length() != 0 && descriptionInput.getText() != null && descriptionInput.getText().toString().length() != 0) {
+                if (phoneNumber != null && capacity != null && imageId != null && ownerInput.getText() != null && ownerInput.getText().toString().length() != 0 && descriptionInput.getText() != null && descriptionInput.getText().toString().length() != 0) {
                     FoodItem foodItem = new FoodItem(ownerInput.getText().toString(), descriptionInput.getText().toString(),
                             "Post", phoneNumber.getText().toString(), address.getText().toString(), myLocation.getLongitude(), myLocation.getLatitude(), category.getText().toString(), capacity.getText().toString(),
                             "", imageId);

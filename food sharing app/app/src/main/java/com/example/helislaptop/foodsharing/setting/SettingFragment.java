@@ -38,8 +38,11 @@ import com.parse.LogInCallback;
 import com.parse.ParseAnalytics;
 import com.parse.ParseException;
 import com.parse.ParseObject;
+import com.parse.ParseQuery;
 import com.parse.ParseUser;
 import com.parse.SignUpCallback;
+
+import java.util.List;
 
 import static android.app.Activity.RESULT_OK;
 import static android.content.Context.INPUT_METHOD_SERVICE;
@@ -77,6 +80,8 @@ public class SettingFragment extends FoodBasicFragment {
         super.onCreate(savedInstanceState);
         if (ParseUser.getCurrentUser() != null) {
             ParseUser.logOutInBackground();
+        } else if (mGoogleSignInClient != null && GoogleSignIn.getLastSignedInAccount(getContext()) != null) {
+            mGoogleSignInClient.signOut();
         }
 
     }
@@ -112,7 +117,14 @@ public class SettingFragment extends FoodBasicFragment {
             phoneNumberProfileWord.setVisibility(View.GONE);
             logOutButton = settingView.findViewById(R.id.logoutButton);
             logOutButton.setVisibility(View.GONE);
-            logOutButton.setOnClickListener(v -> showLogIn());
+            logOutButton.setOnClickListener(v -> {
+                if (ParseUser.getCurrentUser() != null) {
+                    ParseUser.logOut();
+                } else {
+                    googleSignOut();
+                }
+                showLogIn();
+            });
             phoneNumberProfile.setVisibility(View.GONE);
             changeSignupModeTextView = (TextView) settingView.findViewById(R.id.changeSignupModeTextView);
             changeSignupModeTextView.setOnClickListener(this::onClick);
@@ -136,6 +148,10 @@ public class SettingFragment extends FoodBasicFragment {
         return settingView;
     }
 
+    private void googleSignOut() {
+        mGoogleSignInClient.signOut();
+    }
+
     private void showLogIn() {
         ParseUser.logOutInBackground();
         isLogIn = false;
@@ -157,26 +173,31 @@ public class SettingFragment extends FoodBasicFragment {
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();
         startActivityForResult(signInIntent, RC_SIGN_IN);
     }
-    /*
+
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(getContext());
+
         if (account != null) {
             String userName = account.getDisplayName();
             String email = account.getEmail();
-            ParseObject object = new ParseObject("user");
-            object.put("user", userName);
-            object.put("email", email);
-            try {
-                object.save();
-            } catch (ParseException e) {
-                e.printStackTrace();
-            }
-            showUserInfo();
+            isLogIn = true;
+            signUpButton.setVisibility(View.GONE);
+            googleSignInButton.setVisibility(View.GONE);
+            changeSignupModeTextView.setVisibility(View.GONE);
+            passwordText.setVisibility(View.GONE);
+            usernameText.setVisibility(View.GONE);
+            userNameProfile.setText(userName);
+            userNameProfile.setVisibility(View.VISIBLE);
+            phoneNumberProfile.setText(email);
+            phoneNumberProfile.setVisibility(View.VISIBLE);
+            logOutButton.setVisibility(View.VISIBLE);
+            userNameProfileWord.setVisibility(View.VISIBLE);
+            phoneNumberProfileWord.setVisibility(View.VISIBLE);
         }
     }
-    */
+
 
 
 

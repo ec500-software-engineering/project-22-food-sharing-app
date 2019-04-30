@@ -42,7 +42,7 @@ import java.util.List;
  */
 public class FoodFragment extends MvpFragment<FoodContract.Presenter> implements FoodContract.View, FoodContract.Model, FoodFragmentManager{
 
-
+    RecyclerView recyclerView;
     private FoodItemAdapter foodItemAdapter;
     private TextView emptyState;
     private LocationManager locationManager;
@@ -65,12 +65,11 @@ public class FoodFragment extends MvpFragment<FoodContract.Presenter> implements
         //7.8
         View view = inflater.inflate(R.layout.fragment_food, container, false);
         getCurrentLocation();
-        RecyclerView recyclerView = view.findViewById(R.id.recycler_view);
+        recyclerView = view.findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         emptyState = view.findViewById(R.id.empty_state);
-        foodItemAdapter = new FoodItemAdapter(foodFragmentManager);
-        recyclerView.setAdapter(foodItemAdapter);
 
+        refreshList();
         ImageView buttonView;
         buttonView = view.findViewById(R.id.add_button);
         buttonView.setImageResource(R.drawable.add);
@@ -88,6 +87,10 @@ public class FoodFragment extends MvpFragment<FoodContract.Presenter> implements
 
 
         return view;
+    }
+    public void refreshList() {
+        foodItemAdapter = new FoodItemAdapter(foodFragmentManager);
+        recyclerView.setAdapter(foodItemAdapter);
     }
 
     @Override

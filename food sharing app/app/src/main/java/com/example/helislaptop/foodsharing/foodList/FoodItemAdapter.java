@@ -36,7 +36,7 @@ import io.reactivex.schedulers.Schedulers;
 
 public class FoodItemAdapter extends RecyclerView.Adapter<FoodItemAdapter.FoodItemViewHolder> {
 
-    private List<FoodItem> foodList;
+    public List<FoodItem> foodList;
     private FoodFragmentManager fragmentManager;
     private static int[] ICON_ARRAY = new int[]{R.drawable.post, R.drawable.request};
 

@@ -4,6 +4,8 @@ package com.example.helislaptop.foodsharing.map;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.location.Location;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -13,15 +15,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.helislaptop.foodsharing.FoodApplication;
 import com.example.helislaptop.foodsharing.MainActivity;
 import com.example.helislaptop.foodsharing.ParseDatabase.FetchDataFromParse;
 import com.example.helislaptop.foodsharing.R;
+import com.example.helislaptop.foodsharing.common.FoodFragmentManager;
 import com.example.helislaptop.foodsharing.database.AppDatabase;
 import com.example.helislaptop.foodsharing.database.FoodDao;
 import com.example.helislaptop.foodsharing.foodList.FoodFragment;
 import com.example.helislaptop.foodsharing.foodList.FoodItem;
+import com.example.helislaptop.foodsharing.foodList.FoodItemAdapter;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
@@ -30,7 +35,12 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.parse.ParseException;
+import com.parse.ParseFile;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -72,7 +82,9 @@ public class MapViewFragment extends Fragment {
                     //String itemName = Integer.toString(item.itemId);
                     addDataMap(item);
                 }
+
                 addMyLocation(FoodFragment.myLocation);
+
             }
         });
         mMapView = rootView.findViewById(R.id.map);
@@ -117,6 +129,53 @@ public class MapViewFragment extends Fragment {
                 }
 
                 //googleMap.clear();
+                googleMap.setInfoWindowAdapter(new GoogleMap.InfoWindowAdapter() {
+                    @Override
+                    public View getInfoWindow(Marker arg0)
+                    {
+                        return null;
+                    }
+                    @Override
+                    public View getInfoContents(Marker arg0) {
+                        View view = getLayoutInflater().inflate(R.layout.custom_infowindow, null);
+                        ImageView infoImage = view.findViewById(R.id.info_image);
+                        TextView infoTitle = view.findViewById(R.id.info_title);
+                        TextView infoCapacity = view.findViewById(R.id.info_capacity);
+                        TextView infoPhone = view.findViewById(R.id.info_PhoneNumber);
+                        infoTitle.setText(arg0.getTitle());
+                        String imageId;
+                        if (arg0.getSnippet() != null) {
+                            String[] infos = arg0.getSnippet().split(",");
+                            imageId = infos[0];
+                            String capacity = infos[1];
+                            String phoneNumber = infos[2];
+                            infoCapacity.setText("Capacity: " + capacity);
+                            infoPhone.setText("Phone Number: " + phoneNumber);
+
+
+                        ParseQuery<ParseObject> query = new ParseQuery<>("Image");
+                        query.whereEqualTo("ImageId",imageId);
+                        query.orderByDescending("createdAt");
+                        Bitmap bitmap = null;
+                        try {
+                            List<ParseObject> objectList = query.find();
+                            if (objectList != null && objectList.size() > 0) {
+                                ParseObject object = objectList.get(0);
+                                ParseFile file = (ParseFile) object.get("Image");
+                                byte[] data = file.getData();
+                                bitmap = BitmapFactory.decodeByteArray(data, 0, data.length);
+                                infoImage.setImageBitmap(bitmap);
+                            }
+
+
+                        } catch (ParseException e) {
+                            e.printStackTrace();
+                        }
+                        }
+                        return view;
+                    }
+                });
+
                 CameraPosition cameraPosition = new CameraPosition.Builder().target(myCurrentLocation).zoom(13).build();
                 googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
             }
@@ -164,9 +223,9 @@ public class MapViewFragment extends Fragment {
         LatLng  geoPoint = new LatLng(foodItem.latitude,foodItem.longitude);
 
         if (foodItem.postOrRequest.equals("Post")) {
-            googleMap.addMarker(new MarkerOptions().position(geoPoint).title("Food for " + foodItem.capacity).snippet(foodItem.description).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
+            googleMap.addMarker(new MarkerOptions().position(geoPoint).title("Food from " + foodItem.user).snippet(foodItem.foodImage + "," + foodItem.capacity +","+foodItem.phoneNumber).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
         } else {
-            googleMap.addMarker(new MarkerOptions().position(geoPoint).title("Request for " + foodItem.capacity).snippet(foodItem.description).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+            googleMap.addMarker(new MarkerOptions().position(geoPoint).title("Request from " + foodItem.user).snippet(foodItem.foodImage+ "," + foodItem.capacity +","+foodItem.phoneNumber).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
         }
     }
     public static void clearMarkers() {
