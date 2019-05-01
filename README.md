@@ -13,7 +13,7 @@
 Display: Recycler View
 <br>Map: Google Map API
 <br>Platform: Android Studio
-<br>Database: MongoDB
+<br>Database: Parse(Based on MongoDB)
 <br>Structure: MVP structure
 <br>Debug: Setho
 
@@ -29,7 +29,7 @@ Google map API to display nearby food post and request on map
 
 ## Task assignments
 He Li: Overall layout, Recycler View, Goole Map API, MVP structure
-<br>ZBY: AWS server, Backend storage, login interface, data connections from server
+<br>ZBY: AWS server & backend deployment, login interface, image & data storage
 
 ## Definition of Sprint 1, 2 and 3
 Sprint 1: Research on how to use recycler view, room and google map API. Optimize design, specify what tool to use.
