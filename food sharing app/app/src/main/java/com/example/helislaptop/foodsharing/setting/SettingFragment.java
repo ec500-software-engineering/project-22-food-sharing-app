@@ -78,9 +78,15 @@ public class SettingFragment extends FoodBasicFragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestEmail()
+                .build();
+        mGoogleSignInClient = GoogleSignIn.getClient(getContext(), gso);
+        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(getContext());
         if (ParseUser.getCurrentUser() != null) {
             ParseUser.logOutInBackground();
-        } else if (mGoogleSignInClient != null && GoogleSignIn.getLastSignedInAccount(getContext()) != null) {
+        } else if (mGoogleSignInClient != null && account != null) {
             mGoogleSignInClient.signOut();
         }
 

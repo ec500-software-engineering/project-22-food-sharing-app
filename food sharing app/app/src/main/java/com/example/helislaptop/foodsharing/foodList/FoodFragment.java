@@ -2,6 +2,7 @@ package com.example.helislaptop.foodsharing.foodList;
 
 
 import android.Manifest;
+import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.location.Location;
@@ -33,8 +34,11 @@ import com.example.helislaptop.foodsharing.map.MapViewFragment;
 import com.example.helislaptop.foodsharing.mvp.FoodContract;
 import com.example.helislaptop.foodsharing.mvp.FoodPresenter;
 import com.example.helislaptop.foodsharing.mvp.MvpFragment;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.parse.ParseUser;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -48,6 +52,7 @@ public class FoodFragment extends MvpFragment<FoodContract.Presenter> implements
     private LocationManager locationManager;
     private String locationProvider;
     public static Location myLocation;
+    View view;
     public static FoodFragment newInstance() {
 
         FoodFragment fragment = new FoodFragment();
@@ -63,35 +68,55 @@ public class FoodFragment extends MvpFragment<FoodContract.Presenter> implements
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         //7.8
-        View view = inflater.inflate(R.layout.fragment_food, container, false);
+        view = inflater.inflate(R.layout.fragment_food, container, false);
         getCurrentLocation();
+
+        emptyState = view.findViewById(R.id.empty_state);
         recyclerView = view.findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        emptyState = view.findViewById(R.id.empty_state);
-
-        refreshList();
-        ImageView buttonView;
-        buttonView = view.findViewById(R.id.add_button);
-        buttonView.setImageResource(R.drawable.add);
+        foodItemAdapter = new FoodItemAdapter(foodFragmentManager);
+        recyclerView.setAdapter(foodItemAdapter);
+        ImageView addButton;
+        addButton = view.findViewById(R.id.add_button);
+        //buttonView.setImageResource(R.drawable.add);
         //ParseUser.logOutInBackground();
         //Log.i("user",ParseUser.getCurrentUser().toString());
-        buttonView.setOnClickListener(v -> {
-                if (ParseUser.getCurrentUser() != null) {
+        addButton.setOnClickListener(v -> {
+            GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(getContext());
+                if (ParseUser.getCurrentUser() != null || account != null) {
                     foodFragmentManager.doFragmentTransaction(FoodPostFragment.newInstance(myLocation));
                 } else {
                     Toast.makeText((Context) getContext(), "Please log in first!", Toast.LENGTH_LONG).show();
                 }
             }
         );
+        ImageView refreshButton;
+        refreshButton = view.findViewById(R.id.refresh_button);
+        refreshButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                MapViewFragment.clearMarkers();
+                List<FoodItem> foodItems = new FetchDataFromParse().fetchDataFromParse();
+                MapViewFragment.showDataMap(foodItems);
+                for (FoodItem item : foodItems) {
+                    //String itemName = Integer.toString(item.itemId);
+                    MapViewFragment.addDataMap(item);
+                }
+
+                MapViewFragment.addMyLocation(FoodFragment.myLocation);
+                foodFragmentManager.doFragmentTransaction(FoodFragment.newInstance());
+                System.gc();
+                //getFragmentManager().popBackStack();
+            }
+        });
 
 
 
         return view;
     }
-    public void refreshList() {
-        foodItemAdapter = new FoodItemAdapter(foodFragmentManager);
-        recyclerView.setAdapter(foodItemAdapter);
-    }
+
 
     @Override
     public FoodContract.Presenter getPresenter() {
@@ -107,11 +132,12 @@ public class FoodFragment extends MvpFragment<FoodContract.Presenter> implements
         }
         if (foodItemList != null) {
             //Sorting here?
-            Double lat = myLocation.getLatitude();
-            Double lon = myLocation.getLongitude();
+            //Double lat = myLocation.getLatitude();
+            //Double lon = myLocation.getLongitude();
             //sortFoodList(lat, lon, foodItemList);
             //MapViewFragment.clearMarkers();
             foodItemAdapter.setFoodList(foodItemList);
+
         }
 
     }
@@ -171,7 +197,7 @@ public class FoodFragment extends MvpFragment<FoodContract.Presenter> implements
             double lat = 42.3471 + Math.random() * 0.05 - 0.025;
             myLocation.setLongitude(lon);
             myLocation.setLatitude(lat);
-            Toast.makeText(getContext(), "Can't get Geo location", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getContext(), "Can't get Geo location", Toast.LENGTH_SHORT).show();
         }
         //get Location
 
@@ -195,7 +221,7 @@ public class FoodFragment extends MvpFragment<FoodContract.Presenter> implements
                 double lat = 42.3471 + Math.random() * 0.05 - 0.025;
                 myLocation.setLongitude(lon);
                 myLocation.setLatitude(lat);
-                Toast.makeText(getContext(), "Can't get Geo location", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getContext(), "Can't get Geo location", Toast.LENGTH_SHORT).show();
             }
 
             locationManager.requestLocationUpdates(locationProvider, 3000, 1, locationListener);

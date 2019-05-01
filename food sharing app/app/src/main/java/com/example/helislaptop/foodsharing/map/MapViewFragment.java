@@ -70,6 +70,7 @@ public class MapViewFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_map, container, false);
+        /*
         refreshButton = rootView.findViewById(R.id.refresh_button);
         refreshButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,6 +88,7 @@ public class MapViewFragment extends Fragment {
 
             }
         });
+        */
         mMapView = rootView.findViewById(R.id.map);
         mMapView.onCreate(savedInstanceState);
 
@@ -184,7 +186,7 @@ public class MapViewFragment extends Fragment {
         return rootView;
     }
 
-    private void addMyLocation(Location myLocation) {
+    public static void addMyLocation(Location myLocation) {
         LatLng myCurrentLocation = new LatLng(myLocation.getLatitude(),myLocation.getLongitude());
         googleMap.addMarker(new MarkerOptions().position(myCurrentLocation).title("My Current Location"));
 

@@ -25,14 +25,22 @@
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/helislaptop/foodsharing/WebViewActivity.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/helislaptop/foodsharing/foodList/FoodFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/helislaptop/foodsharing/foodList/FoodFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/helislaptop/foodsharing/foodList/FoodItemAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/helislaptop/foodsharing/foodList/FoodItemAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/helislaptop/foodsharing/foodList/foodPost/FoodPostFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/helislaptop/foodsharing/foodList/foodPost/FoodPostFragment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/helislaptop/foodsharing/map/MapViewFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/helislaptop/foodsharing/map/MapViewFragment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/helislaptop/foodsharing/setting/SettingFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/helislaptop/foodsharing/setting/SettingFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/border.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/border.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/food_item.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/food_item.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_food.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_food.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_food_detail.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_food_detail.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_food_post.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_food_post.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_map.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_map.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -64,103 +72,95 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/helislaptop/foodsharing/map/MapViewFragment.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/helislaptop/foodsharing/foodList/FoodFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="89" column="51" lean-forward="true" selection-start-line="89" selection-start-column="51" selection-end-line="89" selection-end-column="51" />
+            <state relative-caret-position="263">
+              <caret line="229" column="5" selection-start-line="229" selection-start-column="5" selection-end-line="229" selection-end-column="5" />
               <folding>
-                <element signature="e#5720#5721#0" expanded="true" />
-                <element signature="e#5779#5780#0" expanded="true" />
-                <element signature="e#10261#10262#0" expanded="true" />
+                <element signature="e#5232#5233#0" expanded="true" />
+                <element signature="e#5274#5275#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/helislaptop/foodsharing/common/ContainerFragment.java">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/helislaptop/foodsharing/foodList/detail/FoodDetailFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="393">
-              <caret line="69" column="48" selection-start-line="69" selection-start-column="48" selection-end-line="69" selection-end-column="48" />
+            <state relative-caret-position="263">
+              <caret line="74" column="5" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/helislaptop/foodsharing/MainActivity.java">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_food_post.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="27" column="39" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="39" />
+            <state relative-caret-position="198">
+              <caret line="52" column="39" selection-start-line="52" selection-start-column="39" selection-end-line="52" selection-end-column="39" />
             </state>
           </provider>
+          <provider editor-type-id="android-designer2" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/helislaptop/foodsharing/foodList/foodPost/FoodPostFragment.java">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/border.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="242">
-              <caret line="158" column="38" selection-start-line="158" selection-start-column="38" selection-end-line="158" selection-end-column="38" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_map_view.xml">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/food_item.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="386">
+              <caret line="101" column="36" selection-start-line="101" selection-start-column="36" selection-end-line="101" selection-end-column="36" />
+              <folding>
+                <element signature="e#3513#3529#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer2" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_food_basic.xml">
           <provider selected="true" editor-type-id="text-editor" />
           <provider editor-type-id="android-designer2" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_map.xml">
+        <entry file="file://$PROJECT_DIR$/app/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="19" column="32" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
+            <state relative-caret-position="471">
+              <caret line="69" column="1" selection-start-line="69" selection-start-column="1" selection-end-line="69" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_food_detail.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="472">
+              <caret line="41" column="8" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="8" />
             </state>
           </provider>
           <provider editor-type-id="android-designer2" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/helislaptop/foodsharing/foodList/FoodItemAdapter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="41" selection-start-line="41" selection-end-line="41" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#3497#3498#0" expanded="true" />
-                <element signature="e#3535#3536#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/color/bottom_bar_color.xml">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/helislaptop/foodsharing/foodList/FoodFragment.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="91" column="36" selection-start-line="91" selection-start-column="36" selection-end-line="91" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/helislaptop/foodsharing/setting/SettingFragment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="497">
-              <caret line="257" column="52" selection-start-line="257" selection-start-column="52" selection-end-line="257" selection-end-column="52" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/helislaptop/foodsharing/map/MapFragment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="106">
-              <caret line="67" column="47" selection-start-line="67" selection-start-column="47" selection-end-line="67" selection-end-column="47" />
+            <state relative-caret-position="242">
+              <caret line="11" column="44" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -177,26 +177,12 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>signup</find>
-      <find>signin</find>
-      <find>signinbu</find>
-      <find>Gone</find>
-      <find>showLogIn();</find>
-      <find>showLogIn()</find>
-      <find>showlocation</find>
-      <find>postionView</find>
-      <find>getUsername()</find>
-      <find>fetchdata</find>
-      <find>size</find>
-      <find>imageName</find>
       <find>getcurrentloca</find>
-      <find>toast</find>
       <find>showLocation</find>
       <find>map</find>
       <find>load</find>
       <find>icon</find>
       <find>arrow</find>
-      <find>logout</find>
       <find>signout</find>
       <find>last</find>
       <find>adddata</find>
@@ -206,7 +192,21 @@
       <find>bac</find>
       <find>content</find>
       <find>8</find>
+      <find>click</find>
+      <find>logout</find>
       <find>refresh</find>
+      <find>refres</find>
+      <find>id</find>
+      <find>add</find>
+      <find>byId</find>
+      <find>bytag</find>
+      <find>cli</find>
+      <find>new</find>
+      <find>getFragment</find>
+      <find>toast</find>
+      <find>geo</find>
+      <find>null</find>
+      <find>color</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -217,8 +217,6 @@
       <list>
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_upload.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/helislaptop/foodsharing/foodList/foodPost/UploadFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_food_post.xml" />
-        <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/helislaptop/foodsharing/setting/ProfileFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_profile.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/helislaptop/foodsharing/WebViewActivity.java" />
@@ -233,25 +231,32 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/helislaptop/foodsharing/foodList/detail/FoodDetailFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/helislaptop/foodsharing/map/MapFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/helislaptop/foodsharing/common/LocationInfo.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_food_detail.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/ic_refresh_black_24dp.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/ic_restaurant_menu_logo_24dp.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/drag_down_refresh.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/custom_infowindow.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/helislaptop/foodsharing/setting/SettingFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/helislaptop/foodsharing/foodList/foodPost/FoodPostFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_map.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/helislaptop/foodsharing/foodList/FoodItemAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/helislaptop/foodsharing/common/ContainerFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/helislaptop/foodsharing/foodList/FoodFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/helislaptop/foodsharing/setting/SettingFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/helislaptop/foodsharing/map/MapViewFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_map.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_food.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/helislaptop/foodsharing/common/ContainerFragment.java" />
+        <option value="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" />
+        <option value="$PROJECT_DIR$/app/build.gradle" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/helislaptop/foodsharing/foodList/FoodFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/border.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/food_item.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_food_post.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_food_detail.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-10" />
-    <option name="y" value="-10" />
+    <option name="x" value="787" />
+    <option name="y" value="-25" />
     <option name="width" value="980" />
     <option name="height" value="1040" />
   </component>
@@ -261,17 +266,15 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="AndroidView">
         <subPane>
           <expand>
             <path>
               <item name="food sharing app" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
-            </path>
-            <path>
-              <item name="food sharing app" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="manifests" type="f94875db:AndroidManifestsGroupNode" />
             </path>
             <path>
               <item name="food sharing app" type="1abcf292:AndroidViewProjectNode" />
@@ -326,6 +329,16 @@
               <item name="example" type="462c0819:PsiDirectoryNode" />
               <item name="helislaptop" type="462c0819:PsiDirectoryNode" />
               <item name="foodsharing" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="food sharing app" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="com" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
+              <item name="helislaptop" type="462c0819:PsiDirectoryNode" />
+              <item name="foodsharing" type="462c0819:PsiDirectoryNode" />
               <item name="foodList" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -353,65 +366,19 @@
             <path>
               <item name="food sharing app" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="com" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-              <item name="helislaptop" type="462c0819:PsiDirectoryNode" />
-              <item name="foodsharing" type="462c0819:PsiDirectoryNode" />
-              <item name="map" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="food sharing app" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="com" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-              <item name="helislaptop" type="462c0819:PsiDirectoryNode" />
-              <item name="foodsharing" type="462c0819:PsiDirectoryNode" />
-              <item name="mvp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="food sharing app" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="com" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-              <item name="helislaptop" type="462c0819:PsiDirectoryNode" />
-              <item name="foodsharing" type="462c0819:PsiDirectoryNode" />
-              <item name="ParseDatabase" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="food sharing app" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="com" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-              <item name="helislaptop" type="462c0819:PsiDirectoryNode" />
-              <item name="foodsharing" type="462c0819:PsiDirectoryNode" />
-              <item name="setting" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="food sharing app" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
             </path>
             <path>
               <item name="food sharing app" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="drawable" type="ddeffd01:AndroidResFolderTypeNode" />
+              <item name="color" type="ddeffd01:AndroidResFolderTypeNode" />
             </path>
             <path>
               <item name="food sharing app" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
               <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
-            </path>
-            <path>
-              <item name="food sharing app" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="mipmap" type="ddeffd01:AndroidResFolderTypeNode" />
             </path>
             <path>
               <item name="food sharing app" type="1abcf292:AndroidViewProjectNode" />
@@ -427,9 +394,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -562,6 +526,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20402685" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -573,15 +538,15 @@
       <window_info id="Capture Tool" order="7" />
       <window_info id="Resources Explorer" order="8" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3286119" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.33427763" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3286119" />
-      <window_info anchor="bottom" id="Logcat" order="7" sideWeight="0.49798658" weight="0.3286119" />
+      <window_info anchor="bottom" id="Logcat" order="7" sideWeight="0.4966443" weight="0.3286119" />
       <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49932885" weight="0.3286119" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50201344" side_tool="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5033557" side_tool="true" weight="0.3286119" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.3286119" />
       <window_info anchor="bottom" id="Build" order="11" sideWeight="0.4986577" visible="true" weight="0.24645892" />
       <window_info anchor="bottom" id="Android Profiler" order="12" weight="0.3286119" />
@@ -596,7 +561,7 @@
       <window_info anchor="right" id="Preview" order="8" weight="0.3295302" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20469798" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20402685" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Captures" order="2" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -606,31 +571,36 @@
       <window_info id="Capture Tool" order="7" />
       <window_info id="Resources Explorer" order="8" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3286119" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.33427763" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3286119" />
-      <window_info anchor="bottom" id="Logcat" order="7" weight="0.3286119" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3286119" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Logcat" order="7" sideWeight="0.4966443" visible="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49932885" weight="0.3286119" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5033557" side_tool="true" weight="0.3286119" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.3286119" />
-      <window_info anchor="bottom" id="Build" order="11" visible="true" weight="0.24645892" />
-      <window_info anchor="bottom" id="Android Profiler" order="12" />
+      <window_info anchor="bottom" id="Build" order="11" sideWeight="0.4986577" weight="0.24645892" />
+      <window_info anchor="bottom" id="Android Profiler" order="12" weight="0.3286119" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Device File Explorer" order="3" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Gradle" order="5" />
+      <window_info anchor="right" id="Gradle" order="5" weight="0.3295302" />
       <window_info anchor="right" id="Theme Preview" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Preview" order="8" weight="0.3295302" />
+      <window_info anchor="right" id="Preview" order="8" visible="true" weight="0.3295302" />
     </layout-to-restore>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>foodItemAdapter.foodList</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>infoTitle.getText()</expression-string>
         <language-id>JAVA</language-id>
@@ -664,101 +634,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/helislaptop/foodsharing/mvp/FoodContract.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/helislaptop/foodsharing/mvp/FoodModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="836">
-          <caret line="48" column="20" selection-start-line="48" selection-start-column="20" selection-end-line="48" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/helislaptop/foodsharing/mvp/FoodPresenter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="35" column="67" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/helislaptop/foodsharing/WebViewActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_check_black_24dp.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_close_black_24dp.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_content_copy_black_24dp.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_background.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-v24/ic_launcher_foreground.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_list_black_24dp.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_more_vert_black_24dp.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_photo_camera_black_24dp.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_place_black_24dp.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_settings_black_24dp.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/iconfinder_add_blue.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/post.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/request.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/toast_style.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="44" selection-start-line="5" selection-start-column="44" selection-end-line="5" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="30" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_refresh_black_24dp.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="30" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_restaurant_menu_black_24dp.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -774,14 +649,6 @@
       <provider selected="true" editor-type-id="text-editor" />
       <provider editor-type-id="android-designer2" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-manifest" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_restaurant_menu_logo_24dp.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
@@ -793,35 +660,7 @@
       <provider selected="true" editor-type-id="text-editor" />
       <provider editor-type-id="android-designer2" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_setting.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_food_post.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-      <provider editor-type-id="android-designer2" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/drag_down_refresh.xml" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_food_detail.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="24" column="28" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_food_basic.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_food.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="27" selection-end-column="44" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-26/android/app/ActivityThread.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="89298">
@@ -833,13 +672,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="528">
           <caret line="39" column="26" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-26/java/util/List.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6226">
-          <caret line="306" column="12" selection-start-line="306" selection-start-column="12" selection-end-line="306" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -879,20 +711,32 @@
       </provider>
       <provider editor-type-id="android-designer2" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/helislaptop/foodsharing/setting/SettingFragment.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/helislaptop/foodsharing/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="497">
-          <caret line="257" column="52" selection-start-line="257" selection-start-column="52" selection-end-line="257" selection-end-column="52" />
+        <state relative-caret-position="220">
+          <caret line="27" column="39" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="39" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/helislaptop/foodsharing/foodList/foodPost/FoodPostFragment.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="158" column="38" selection-start-line="158" selection-start-column="38" selection-end-line="158" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="206">
+          <caret line="17" column="12" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-manifest" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/helislaptop/foodsharing/setting/SettingFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-110">
+          <caret line="63" column="31" selection-start-line="63" selection-start-column="31" selection-end-line="63" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/helislaptop/foodsharing/map/MapFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-75">
+          <caret line="67" column="47" selection-start-line="67" selection-start-column="47" selection-end-line="67" selection-end-column="47" />
         </state>
       </provider>
     </entry>
@@ -902,61 +746,254 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_map.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="19" column="32" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
+        <state relative-caret-position="208">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
         </state>
       </provider>
       <provider editor-type-id="android-designer2" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/helislaptop/foodsharing/map/MapFragment.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_container.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_food.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="67" column="47" selection-start-line="67" selection-start-column="47" selection-end-line="67" selection-end-column="47" />
+        <state relative-caret-position="286">
+          <caret line="20" column="36" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
         </state>
       </provider>
+      <provider editor-type-id="android-designer2" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/helislaptop/foodsharing/MainActivity.java">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.support/recyclerview-v7/26.1.0/63d6891b399433c913fe91ce95a8456de02d367f/recyclerview-v7-26.1.0-sources.jar!/android/support/v7/widget/RecyclerView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="27" column="39" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/helislaptop/foodsharing/foodList/FoodItemAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="41" selection-start-line="41" selection-end-line="41" />
+        <state relative-caret-position="148">
+          <caret line="6760" column="26" selection-start-line="6760" selection-start-column="26" selection-end-line="6760" selection-end-column="26" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3497#3498#0" expanded="true" />
-            <element signature="e#3535#3536#0" expanded="true" />
+            <element signature="e#292012#292013#0" expanded="true" />
+            <element signature="e#292063#292064#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/helislaptop/foodsharing/ParseDatabase/FetchDataFromParse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="29" column="54" selection-start-line="29" selection-start-column="54" selection-end-line="29" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.support/support-fragment/26.1.0/8279b00f5194701ff18363fa2958c5a26670b0ef/support-fragment-26.1.0-sources.jar!/android/support/v4/app/FragmentManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="214" column="29" selection-start-line="214" selection-start-column="29" selection-end-line="214" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/helislaptop/foodsharing/common/ContainerFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
-          <caret line="69" column="48" selection-start-line="69" selection-start-column="48" selection-end-line="69" selection-end-column="48" />
+        <state relative-caret-position="285">
+          <caret line="37" column="33" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/helislaptop/foodsharing/foodList/FoodFragment.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/helislaptop/foodsharing/common/FoodNoSwipeViewPager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="91" column="36" selection-start-line="91" selection-start-column="36" selection-end-line="91" selection-end-column="36" />
+        <state relative-caret-position="49">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-26/java/util/List.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="306" column="12" selection-start-line="306" selection-start-column="12" selection-end-line="306" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.support/support-fragment/26.1.0/8279b00f5194701ff18363fa2958c5a26670b0ef/support-fragment-26.1.0-sources.jar!/android/support/v4/app/Fragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="762" column="33" selection-start-line="762" selection-start-column="33" selection-end-line="762" selection-end-column="33" />
+          <folding>
+            <element signature="e#27889#27890#0" expanded="true" />
+            <element signature="e#27928#27929#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/helislaptop/foodsharing/common/FoodBasicActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-26/android/os/Looper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="190" column="21" selection-start-line="190" selection-start-column="21" selection-end-line="190" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-26/android/os/Handler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="106" selection-start-line="106" selection-end-line="106" />
+          <folding>
+            <element signature="e#31128#31129#0" expanded="true" />
+            <element signature="e#31166#31167#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-26/android/view/View.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1085">
+          <caret line="24711" column="5" selection-start-line="24711" selection-start-column="5" selection-end-line="24711" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/helislaptop/foodsharing/common/FoodFragmentPagerAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/helislaptop/foodsharing/map/MapViewFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="89" column="51" lean-forward="true" selection-start-line="89" selection-start-column="51" selection-end-line="89" selection-end-column="51" />
+        <state relative-caret-position="148">
+          <caret line="219" column="23" selection-start-line="219" selection-start-column="23" selection-end-line="219" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_setting.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="572">
+          <caret line="152" column="17" selection-start-line="152" selection-start-column="17" selection-end-line="152" selection-end-column="17" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/helislaptop/foodsharing/foodList/FoodItemAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="76" column="28" selection-start-line="76" selection-start-column="24" selection-end-line="76" selection-end-column="28" />
           <folding>
-            <element signature="e#5720#5721#0" expanded="true" />
-            <element signature="e#5779#5780#0" expanded="true" />
-            <element signature="e#10261#10262#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/helislaptop/foodsharing/common/FoodBasicFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="43">
+          <caret line="22" column="27" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/helislaptop/foodsharing/common/FoodFragmentManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="31" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-272" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/helislaptop/foodsharing/foodList/foodPost/FoodPostFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="152" column="39" selection-start-line="152" selection-start-column="35" selection-end-line="152" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_food_basic.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="471">
+          <caret line="69" column="1" selection-start-line="69" selection-start-column="1" selection-end-line="69" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/food_item.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="386">
+          <caret line="101" column="36" selection-start-line="101" selection-start-column="36" selection-end-line="101" selection-end-column="36" />
+          <folding>
+            <element signature="e#3513#3529#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/border.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_food_post.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="52" column="39" selection-start-line="52" selection-start-column="39" selection-end-line="52" selection-end-column="39" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/helislaptop/foodsharing/foodList/FoodFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="229" column="5" selection-start-line="229" selection-start-column="5" selection-end-line="229" selection-end-column="5" />
+          <folding>
+            <element signature="e#5232#5233#0" expanded="true" />
+            <element signature="e#5274#5275#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/helislaptop/foodsharing/foodList/detail/FoodDetailFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="74" column="5" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_food_detail.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="472">
+          <caret line="41" column="8" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="8" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/color/bottom_bar_color.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="44" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
         </state>
       </provider>
     </entry>
