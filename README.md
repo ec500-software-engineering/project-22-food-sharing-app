@@ -50,8 +50,10 @@ The RecyclerView creates only as many view holders as are needed to display the 
 
 ### The MVP structure
 Model–view–presenter (MVP) is a derivation of the model–view–controller (MVC) architectural pattern, and is used mostly for building user interfaces.
-
 In MVP, the presenter assumes the functionality of the "middle-man". In MVP, all presentation logic is pushed to the presenter.
+
+### Basic Structure
+Three fragments: Food posts/requests, Food location via Google Map and login interface.
 
 ## Backend deployment
 ### AWS EC2
