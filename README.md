@@ -40,56 +40,26 @@ Sprint 1: Research on how to use recycler view, room and google map API. Optimiz
 One main activity, with a top bar and bottom navigator bar and a view pager in the mid.
 <br>Use view pager and container fragment to hold fragments on different pages.
 
-### Initial design of the app
-For initial design, this is what the app will look like.
-#### Page 1
-The food nearby page will be binded with recycler view to display post and request nearby.<br> People also can make a post/request for food on this page. 
-<p align="center"> 
-<img src="https://github.com/ec500-software-engineering/project-team-22-food-sharing-app/blob/master/pics/app_page1.png">
-</p>
+## Front End implementation
 
-#### Page 2
-Google map API will be used on this page to display the food posts (blue) and requests (green) on the map.
-<p align="center"> 
-<img src="https://github.com/ec500-software-engineering/project-team-22-food-sharing-app/blob/master/pics/app_page2.png">
-</p>
-
-
-## Progress So Far
-### Display fake data with Recycler View
-#### Recycler view
+### Recycler view
 The RecyclerView widget is a more advanced and flexible version of ListView.
 In the RecyclerView model, several different components work together to display your data. 
 
 The RecyclerView creates only as many view holders as are needed to display the on-screen portion of the dynamic content, plus a few extra. As the user scrolls through the list, the RecyclerView takes the off-screen views and rebinds them to the data which is scrolling onto the screen.
 
-#### The MVP structure
+### The MVP structure
 Model–view–presenter (MVP) is a derivation of the model–view–controller (MVC) architectural pattern, and is used mostly for building user interfaces.
 
 In MVP, the presenter assumes the functionality of the "middle-man". In MVP, all presentation logic is pushed to the presenter.
-#### Click Post details and make new post button will go to a new fragment
-<p align="center"> 
-<img src="https://github.com/ec500-software-engineering/project-team-22-food-sharing-app/blob/master/pics/foodPage.gif">
-</p>
 
-### Display fake geo points on Google map
-#### Embedded Google Map in fragment 
-<p align="center"> 
-<img src="https://github.com/ec500-software-engineering/project-team-22-food-sharing-app/blob/master/pics/mapPage.gif">
-</p>
-
-### Use google account to support login
-<p align="center"> 
-<img src="https://github.com/ec500-software-engineering/project-team-22-food-sharing-app/blob/master/pics/settingPage.gif">
-</p>
-
-### Backend deployment
-#### AWS EC2
+## Backend deployment
+### AWS EC2
 Amazon Elastic Compute Cloud (Amazon EC2) provides scalable computing capacity in the Amazon Web Services (AWS) cloud.
 <img src="https://github.com/ec500-software-engineering/project-22-food-sharing-app/blob/master/pics/AWS.jpg">
 </p>
 
-#### Parse Server
+### Parse Server
 Parse Server is an open source version of the Parse backend that can be deployed to any infrastructure that can run Node.js.
 
 Parse Server works with the Express web application framework. It can be added to existing web applications, or run by itself.
