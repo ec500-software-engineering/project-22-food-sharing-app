@@ -61,7 +61,7 @@ Three fragments: Food list, Food location via Google Map and login interface.
 
 
 #### Food List Fragment
-<div align=center><img src="https://github.com/ec500-software-engineering/project-22-food-sharing-app/blob/master/pics/itemList.gif"></div>
+<div align=center><img src="https://github.com/ec500-software-engineering/project-22-food-sharing-app/blob/master/pics/ItemList.gif"></div>
 
 <div align=center><img src="https://github.com/ec500-software-engineering/project-22-food-sharing-app/blob/master/pics/post.gif"></div>
 
