@@ -57,18 +57,18 @@ Three fragments: Food list, Food location via Google Map and login interface.
 <img src="https://github.com/ec500-software-engineering/project-22-food-sharing-app/blob/master/pics/overall.gif">
 
 #### Login Fragment
-<img src="https://github.com/ec500-software-engineering/project-22-food-sharing-app/blob/master/pics/signin.gif">
+<div align=center><img src="https://github.com/ec500-software-engineering/project-22-food-sharing-app/blob/master/pics/signin.gif"></div>
 
 
 #### Food List Fragment
-<img src="https://github.com/ec500-software-engineering/project-22-food-sharing-app/blob/master/pics/itemList.gif">
+<div align=center><img src="https://github.com/ec500-software-engineering/project-22-food-sharing-app/blob/master/pics/itemList.gif"></div>
 
-<img src="https://github.com/ec500-software-engineering/project-22-food-sharing-app/blob/master/pics/post.gif">
+<div align=center><img src="https://github.com/ec500-software-engineering/project-22-food-sharing-app/blob/master/pics/post.gif"></div>
 
-<img src="https://github.com/ec500-software-engineering/project-22-food-sharing-app/blob/master/pics/refresh.gif">
+<div align=center><img src="https://github.com/ec500-software-engineering/project-22-food-sharing-app/blob/master/pics/refresh.gif"></div>
 
 #### Map Fragment
-<img src="https://github.com/ec500-software-engineering/project-22-food-sharing-app/blob/master/pics/map.gif">
+<div align=center><img src="https://github.com/ec500-software-engineering/project-22-food-sharing-app/blob/master/pics/map.gif"></div>
 
 
 
