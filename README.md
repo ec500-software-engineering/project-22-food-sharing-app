@@ -54,21 +54,21 @@ In MVP, the presenter assumes the functionality of the "middle-man". In MVP, all
 
 ### Basic Structure
 Three fragments: Food list, Food location via Google Map and login interface.
-<img src="https://github.com/ec500-software-engineering/project-22-food-sharing-app/blob/master/pics/overall.git">
+<img src="https://github.com/ec500-software-engineering/project-22-food-sharing-app/blob/master/pics/overall.gif">
 
 #### Login Fragment
-<img src="https://github.com/ec500-software-engineering/project-22-food-sharing-app/blob/master/pics/signin.git">
+<img src="https://github.com/ec500-software-engineering/project-22-food-sharing-app/blob/master/pics/signin.gif">
 
 
 #### Food List Fragment
-<img src="https://github.com/ec500-software-engineering/project-22-food-sharing-app/blob/master/pics/itemList.git">
+<img src="https://github.com/ec500-software-engineering/project-22-food-sharing-app/blob/master/pics/itemList.gif">
 
-<img src="https://github.com/ec500-software-engineering/project-22-food-sharing-app/blob/master/pics/post.git">
+<img src="https://github.com/ec500-software-engineering/project-22-food-sharing-app/blob/master/pics/post.gif">
 
-<img src="https://github.com/ec500-software-engineering/project-22-food-sharing-app/blob/master/pics/refresh.git">
+<img src="https://github.com/ec500-software-engineering/project-22-food-sharing-app/blob/master/pics/refresh.gif">
 
 #### Map Fragment
-<img src="https://github.com/ec500-software-engineering/project-22-food-sharing-app/blob/master/pics/map.git">
+<img src="https://github.com/ec500-software-engineering/project-22-food-sharing-app/blob/master/pics/map.gif">
 
 
 
