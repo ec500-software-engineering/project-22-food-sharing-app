@@ -53,7 +53,24 @@ Model–view–presenter (MVP) is a derivation of the model–view–controller 
 In MVP, the presenter assumes the functionality of the "middle-man". In MVP, all presentation logic is pushed to the presenter.
 
 ### Basic Structure
-Three fragments: Food posts/requests, Food location via Google Map and login interface.
+Three fragments: Food list, Food location via Google Map and login interface.
+<img src="https://github.com/ec500-software-engineering/project-22-food-sharing-app/blob/master/pics/overall.git">
+
+#### Login Fragment
+<img src="https://github.com/ec500-software-engineering/project-22-food-sharing-app/blob/master/pics/signin.git">
+
+
+#### Food List Fragment
+<img src="https://github.com/ec500-software-engineering/project-22-food-sharing-app/blob/master/pics/itemList.git">
+
+<img src="https://github.com/ec500-software-engineering/project-22-food-sharing-app/blob/master/pics/post.git">
+
+<img src="https://github.com/ec500-software-engineering/project-22-food-sharing-app/blob/master/pics/refresh.git">
+
+#### Map Fragment
+<img src="https://github.com/ec500-software-engineering/project-22-food-sharing-app/blob/master/pics/map.git">
+
+
 
 ## Backend deployment
 ### AWS EC2
