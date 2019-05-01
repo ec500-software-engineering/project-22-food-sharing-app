@@ -54,7 +54,7 @@ In MVP, the presenter assumes the functionality of the "middle-man". In MVP, all
 
 ### Basic Structure
 Three fragments: Food list, Food location via Google Map and login interface.
-<img src="https://github.com/ec500-software-engineering/project-22-food-sharing-app/blob/master/pics/overall.gif">
+<div align=center><img src="https://github.com/ec500-software-engineering/project-22-food-sharing-app/blob/master/pics/overall.gif"></div>
 
 #### Login Fragment
 <div align=center><img src="https://github.com/ec500-software-engineering/project-22-food-sharing-app/blob/master/pics/signin.gif"></div>
