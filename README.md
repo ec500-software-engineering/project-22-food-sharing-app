@@ -66,3 +66,14 @@ Parse Server works with the Express web application framework. It can be added t
 <img src="https://github.com/ec500-software-engineering/project-22-food-sharing-app/blob/master/pics/Parse.jpg">
 
 As shown in the picture, all the data including user info, user requests and images are stored by category in our backend database.
+
+#### Why we choose Parse
+##### Easy to deploy
+Once you have the data ready in the database, you don’t need any significant changes to the client code to run your applications.
+##### Data Storage
+Parse used MongoDB to store data and Amazon S3 bucket to store file system. Parse Server has enhanced database functionalities such as performance refactoring, data backup and restore, and indexing.
+##### Friendly dashboard
+Parse was well-known for its dashboard and Parse Server has all the amazing dashboard features of Parse. The dashboard enables users to manage and configure their apps and send push notifications.
+##### Live Queries
+Users need not make the same queries every time they need data. Users can construct a query and Parse Server will fetch real-time data as and when the resulting data changes.
+
